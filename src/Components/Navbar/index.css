@@ -18,18 +18,42 @@
     display: inline-flex;
 }
 
-.navbar a {
-    margin-left: 16px;
-    text-decoration: none;
-    padding: 6px;
+.navbar a,
+.navbar b {
+    color: orangered;
 }
 
-.navbar a:hover {
-    color: #f1356d;
+.navbar a:hover,
+.navbar b:hover {
+    color: #fff;
+    border-color: orangered;
+}
+
+.navbar a:focus{
+    color: #fff;
+    background-color: orangered;
+    border-color: orangered;
 }
 
 .navbar img {
     width: 200px;
+}
+
+.navbar button {
+    color: orangered;
+    border-color: orangered;
+}
+
+.navbar button:hover {
+    color: #fff;
+    background-color: orangered;
+    border-color: orangered;
+}
+
+.navbar button:focus {
+    color: #fff;
+    background-color: orangered;
+    border-color: orangered;
 }
 
 .content {
