@@ -9,30 +9,21 @@
     border-bottom: 1px solid #f2f2f2;
 }
 
-.navbar h1 {
-    color: #f1356d;
-}
-
 .navbar .links {
     margin-left: auto;
     display: inline-flex;
 }
 
 .navbar a,
-.navbar b {
+.navbar b,
+.navbar a:focus {
     color: orangered;
 }
 
 .navbar a:hover,
-.navbar b:hover {
+.navbar b:hover,
+.navbar a:focus {
     color: #fff;
-    border-color: orangered;
-}
-
-.navbar a:focus{
-    color: #fff;
-    background-color: orangered;
-    border-color: orangered;
 }
 
 .navbar img {
@@ -44,16 +35,21 @@
     border-color: orangered;
 }
 
-.navbar button:hover {
+.navbar button:hover,
+.navbar button:focus {
     color: #fff;
     background-color: orangered;
     border-color: orangered;
 }
 
-.navbar button:focus {
+.navbar .dropdown-menu-item {
+    color: orangered;
+    background-color: #fff;
+}
+
+.navbar .dropdown-menu-item:hover {
     color: #fff;
     background-color: orangered;
-    border-color: orangered;
 }
 
 .content {

@@ -15,14 +15,14 @@ const Navbar = () => {
         <nav className='navbar'>
             <img src={ logoImage } alt="logo"/>
             <div className='links'>
-                <Dropdown as={ButtonGroup} style={{paddingRight: "600px"}}>
+                <Dropdown as={ButtonGroup} style={{paddingRight: "550px"}}>
                     <Button variant="outline-primary"> <b><FontAwesomeIcon icon={faBus} className='icons' /> Services </b> </Button>
 
-                    <Dropdown.Toggle split variant="outline-primary" id="dropdown-split-basic" />
-                        <Dropdown.Menu>
-                        <Dropdown.Item href="#/action-1"><b>Action</b></Dropdown.Item>
-                        <Dropdown.Item href="#/action-2"><b>Another action</b></Dropdown.Item>
-                        <Dropdown.Item href="#/action-3"><b>Something else</b></Dropdown.Item>
+                    <Dropdown.Toggle split variant="outline-primary" id="dropdown-split-basic"/>
+                    <Dropdown.Menu style={{borderColor:"orangered"}}>
+                        <Dropdown.Item href="#/action-1" className='dropdown-menu-item'><b>Short Term Rental Service</b></Dropdown.Item>
+                        <Dropdown.Item href="#/action-2" className='dropdown-menu-item'><b>Long Term Contracts</b></Dropdown.Item>
+                        <Dropdown.Item href="#/action-3" className='dropdown-menu-item'><b>Moving service</b></Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
                 <Button variant='outline-primary' style={{marginRight:"10px"}}> <b><FontAwesomeIcon icon={faUser} /> Login </b> </Button>
