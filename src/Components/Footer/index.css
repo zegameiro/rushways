@@ -1,0 +1,26 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0;
+    align-items: center;
+    width: 100%;
+    background-color: #333333;
+    color:white;
+    padding-top: 10px;
+    padding-left: 40px;
+}
+
+.footer h2, h5 {
+    color: white;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.footer h6 {
+    color: grey;
+    text-align: center;
+}
+
+  

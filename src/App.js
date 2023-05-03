@@ -2,6 +2,7 @@ import React from 'react';
 
 import Navbar from './Components/Navbar';
 import Homepage from './Homepage';
+import Footer from './Components/Footer';
 
 const App = () => {
 
@@ -11,6 +12,7 @@ const App = () => {
             <div className="content">
                 <Homepage />
             </div>
+            <Footer />
         </div>
     );
 }
