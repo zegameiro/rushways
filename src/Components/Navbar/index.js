@@ -16,7 +16,7 @@ const Navbar = () => {
             <img src={ logoImage } alt="logo"/>
             <div className='links'>
                 <Dropdown as={ButtonGroup} style={{paddingRight: "550px"}}>
-                    <Button variant="outline-primary"> <b><FontAwesomeIcon icon={faBus} className='icons' /> Services </b> </Button>
+                    <Button variant="outline-primary"> <b><FontAwesomeIcon icon={faBus} /> Services </b> </Button>
 
                     <Dropdown.Toggle split variant="outline-primary" id="dropdown-split-basic"/>
                     <Dropdown.Menu style={{borderColor:"orangered"}}>
