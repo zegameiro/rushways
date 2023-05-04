@@ -101,22 +101,25 @@ const OcasionalServices = () => {
         }
     ]
 
+    const roadImage = require("../../images/OcasionalServices/estrada.jpg")
+
     return (
         <>
             <Navbar />
             <div className="ocasionalservices">
-                <Container>
-                    <Row>
-
-                        <Col sm={2}>
-                            <Button variant="outline-warning" className="backbutton"> <FontAwesomeIcon icon={faArrowLeft}/> Go Back</Button>
-                        </Col>
-                        <Col sm={7}>
-                            <h4>Ocasional Services</h4>
-                        </Col>
-                        
-                    </Row>
-                </Container>
+                <Row>
+                    <Col sm={2}>
+                        <Button variant="outline-warning" className="backbutton"> <FontAwesomeIcon icon={faArrowLeft}/> Go Back</Button>
+                    </Col>
+                    <Col sm={7} style={{paddingBottom:"20px"}}>
+                        <h4>Ocasional Services</h4>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col sm={5}>
+                        <h2>For transportation of people</h2>
+                    </Col>
+                </Row>
             </div>
             <Footer />
         </>
