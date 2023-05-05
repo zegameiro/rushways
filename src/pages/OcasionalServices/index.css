@@ -20,3 +20,24 @@
     background-color: #ea9937 !important;
     color: white !important;
 }
+
+.image-ocasional {
+    position: relative;
+    text-align: center;
+    font-size: 30px;
+    margin: auto;
+}
+
+.image-ocasional::before {
+    content: "";
+    background-image: url("../../images/OcasionalServices/city2.jpg");
+    background-size: cover;
+    opacity: 0.6;
+    width: 100%;
+    height: 450px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+}
