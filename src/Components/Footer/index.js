@@ -22,7 +22,7 @@ const Footer = () => {
         }
     ]
 
-    const logoWhite = require("../../images/rw_logo_white_no_back.png")
+    const logoWhite = require("../../images/Logos/rw_logo_white_no_back.png")
 
     return (
         <footer className="footer">
