@@ -69,7 +69,7 @@ const vehicles = [
         vehicleType: "Electric",
         priceOneDay: 0.0,
         isDriver: true,
-        image: require("../../images/OcasionalServices/opel_mokka.jpg")
+        image: require("../../images/OcasionalServices/tesla_model_b.jpg")
     },
     {
         id: 9,

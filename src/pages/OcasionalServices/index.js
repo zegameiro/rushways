@@ -3,8 +3,8 @@ import { useState } from "react";
 import Navbar from "../../Components/Navbar";
 // import Footer from "../../Components/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Container, Row, Col, Button } from "react-bootstrap";
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { Row, Col, Button } from "react-bootstrap";
+import { faArrowLeft, faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import vehicles from "./vehicles"
 
 import "./index.css"
@@ -13,6 +13,8 @@ import "./index.css"
 const OcasionalServices = () => {
 
     const [page, setPage] = useState(1);
+    const [selectedVehicles, setSelectedVehicles] = useState([]);
+
     const vehiclesPerPage = 5;
     const lastVehicleIndex = page * vehiclesPerPage;
     const firstVehicleIndex = lastVehicleIndex - vehiclesPerPage;
@@ -25,6 +27,43 @@ const OcasionalServices = () => {
     const getIsDriver = (isDriver) => {
         return isDriver ? "available" : "not available";
     };
+
+    const decrementValue = (vehicleId) => {
+        if (selectedVehicles[vehicleId] > 0) {
+            setSelectedVehicles({
+                ...selectedVehicles,
+                [vehicleId]: selectedVehicles[vehicleId] - 1
+            });
+        }
+    };
+
+    const incrementValue = (vehicleId) => {
+        setSelectedVehicles({
+            ...selectedVehicles,
+            [vehicleId]: (selectedVehicles[vehicleId] || 0) + 1
+        });
+    };
+
+    const selectVehicle = (vehicleId) => {
+        setSelectedVehicles((prevSelectedVehicles) => {
+            if(prevSelectedVehicles[vehicleId]) {
+                const { [vehicleId]: _, ...newSelectedVehicles } = prevSelectedVehicles;
+                return newSelectedVehicles;
+            } else {
+                return {
+                    ...prevSelectedVehicles,
+                    [vehicleId]: 1
+                };
+            }
+        });
+    };
+
+    const isDisable = () => {
+        if(selectedVehicles.lenght === 0) 
+            return false;
+        else 
+            return true;
+    }
 
     const getVehicleInfor = (vehicle) => {
         const { id, availableSeats, vehicleName, vehicleType, priceOneDay, isDriver, image } = vehicle;
@@ -42,6 +81,11 @@ const OcasionalServices = () => {
                             <h5> <b>Available Seats:</b> {availableSeats}</h5>
                             <h5> <b>Vehicle Type:</b> {vehicleType}</h5>
                             <h5> <b>Driver:</b> {getIsDriver(isDriver)}</h5>
+                            <div>
+                                <Button variant="light" onClick={() => decrementValue(id)}> <FontAwesomeIcon icon={faMinus} /> </Button>
+                                <span style={{padding:"10px"}}> {selectedVehicles[id] || 0} </span>
+                                <Button variant="light" onClick={() => incrementValue(id)}> <FontAwesomeIcon icon={faPlus} /> </Button>
+                            </div>
                         </Col>
                     </>
                 ) : (
@@ -52,6 +96,9 @@ const OcasionalServices = () => {
                             <h5> <b>Available Seats:</b> {availableSeats}</h5>
                             <h5> <b>Vehicle Type:</b> {vehicleType}</h5>
                             <h5> <b>Driver:</b> {getIsDriver(isDriver)}</h5>
+                            <Button variant="light" onClick={() => decrementValue(id)}> <FontAwesomeIcon icon={faMinus} /> </Button>
+                            <span style={{padding:"10px"}}> {selectedVehicles[id] || 0} </span>
+                            <Button variant="light" onClick={() => incrementValue(id)}> <FontAwesomeIcon icon={faPlus} /> </Button>
                         </Col>
                         <Col sm={6}>
                             <img src={image} alt={vehicleName} style={{height:"422px",width:"750px"}}/>
@@ -98,25 +145,23 @@ const OcasionalServices = () => {
                 <br />
 
                 <div>
-                    {vehicles.map((vehicle) => (
+                    {currentVehicles.map((vehicle) => (
                         <div key={vehicle.id}>
                             {getVehicleInfor(vehicle)}
                             <hr />
                         </div>
                     ))}
-                    <nav>
                         <ul className="pagination">
                             {Array(Math.ceil(vehicles.length / vehiclesPerPage))
                                 .fill()
                                 .map((_, i) => (
                                     <li key={i} className={`page-item ${i + 1 === page ? "active" : null}`}>
-                                        <button className="page-link" onClick={() => setPage(i + 1)}>
+                                        <Button  variant="outline-primary" onClick={() => setPage(i + 1)}>
                                             {i + 1}
-                                        </button>
+                                        </Button>
                                     </li>
                             ))}
                         </ul>
-                    </nav>
                 </div>
 
             </div>
