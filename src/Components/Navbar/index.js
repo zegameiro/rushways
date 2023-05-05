@@ -9,7 +9,7 @@ import './index.css';
 
 const Navbar = () => {
 
-    const logoImage = require('../../images/rw_logo_colored_no_back.png')
+    const logoImage = require('../../images/Logos/rw_logo_colored_no_back.png')
 
     return (
         <nav className='navbar'>
