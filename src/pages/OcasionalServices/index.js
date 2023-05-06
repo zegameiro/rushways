@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import Navbar from "../../Components/Navbar";
 // import Footer from "../../Components/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Row, Col, Button } from "react-bootstrap";
-import { faArrowLeft, faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faMinus, faPlus, faCheck } from "@fortawesome/free-solid-svg-icons";
 import vehicles from "./vehicles"
 
 import "./index.css"
@@ -14,6 +14,7 @@ const OcasionalServices = () => {
 
     const [page, setPage] = useState(1);
     const [selectedVehicles, setSelectedVehicles] = useState([]);
+    const [isButtonActive, setIsButtonActive] = useState(false);
 
     const vehiclesPerPage = 5;
     const lastVehicleIndex = page * vehiclesPerPage;
@@ -21,7 +22,7 @@ const OcasionalServices = () => {
     const currentVehicles = vehicles.slice(firstVehicleIndex, lastVehicleIndex);
 
     const getPrice = (price) => {
-        return price == 0.0 ? "to be discussed" : `$${price}/day`;
+        return price === 0.0 ? "to be discussed" : `$${price}/day`;
     };
 
     const getIsDriver = (isDriver) => {
@@ -44,26 +45,35 @@ const OcasionalServices = () => {
         });
     };
 
-    const selectVehicle = (vehicleId) => {
-        setSelectedVehicles((prevSelectedVehicles) => {
-            if(prevSelectedVehicles[vehicleId]) {
-                const { [vehicleId]: _, ...newSelectedVehicles } = prevSelectedVehicles;
-                return newSelectedVehicles;
-            } else {
-                return {
-                    ...prevSelectedVehicles,
-                    [vehicleId]: 1
-                };
-            }
-        });
+    const handleVehicleSelect = (vehicleId) => {
+        const index = selectedVehicles.indexOf(vehicleId);
+
+        if(index === -1) {
+            setSelectedVehicles([...selectedVehicles, vehicleId]);
+        } else {
+            const updatedSelectedVehicles = [...selectedVehicles];
+            updatedSelectedVehicles.splice(index, 1);
+            setSelectedVehicles(updatedSelectedVehicles);
+        }
     };
 
-    const isDisable = () => {
-        if(selectedVehicles.lenght === 0) 
-            return false;
-        else 
-            return true;
-    }
+    const handleConfirmationClick = () => {
+        const selectedVehiclesIds = selectedVehicles;
+        const totalVehiclesCount = vehicles.length;
+        const vehiclesCount = vehicles.reduce((counts, vehicle) =>{
+            counts[vehicle.id] = vehicle.count;
+            return counts;
+        }, {});
+        const confirmData = {
+            selectedVehiclesIds,
+            totalVehiclesCount,
+            vehiclesCount,
+        };
+    };
+
+    useEffect(() => {
+        setIsButtonActive(selectedVehicles.length > 0);
+    }, [selectedVehicles]);
 
     const getVehicleInfor = (vehicle) => {
         const { id, availableSeats, vehicleName, vehicleType, priceOneDay, isDriver, image } = vehicle;
@@ -163,6 +173,10 @@ const OcasionalServices = () => {
                             ))}
                         </ul>
                 </div>
+
+                <br />
+                <br />
+                <Button variant="outline-warning" className="backbutton" disabled={!isButtonActive}> <FontAwesomeIcon icon={faCheck} onClick={handleConfirmationClick}/> Confirm Selection</Button>
 
             </div>
         </>
