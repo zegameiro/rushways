@@ -5,22 +5,6 @@
     align-items: center;
 }
 
-.backbutton {
-    border-color: #ea9937;
-    background-color: white;
-    color: #ea9937;
-}
-
-.backbutton:hover {
-    background-color: #ea9937;
-    color: white;
-}
-
-.backbutton:active {
-    background-color: #ea9937 !important;
-    color: white !important;
-}
-
 .image-ocasional {
     position: relative;
     text-align: center;
@@ -40,4 +24,24 @@
     right: 0px;
     bottom: 0px;
     left: 0px;
+}
+
+.button-page-number {
+    background-color: white;
+    color: orangered;
+    border-color: orangered;
+}
+
+.button-page-number:hover {
+    background-color: orangered;
+    color: white;
+}
+
+.button-page-number:active {
+    background-color: orangered !important;
+    color: white !important;
+}
+
+.vehicle-information {
+    color: black !important;
 }

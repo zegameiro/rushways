@@ -1,13 +1,13 @@
 import React from 'react';
 
-import './Index.css'
+import './index.css'
 import '../../Components/ServicesBackButton'
 import ServicesBackButton from '../../Components/ServicesBackButton';
 import Navbar from "../../Components/Navbar";
 import Footer from "../../Components/Footer";
 import MovingServices_1 from '../../images/MovingServices/MovingServices_1.jpg';
 import MovingServices_2 from '../../images/MovingServices/MovingServices_2.jpg';
-import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 const MovingServices = () => {
 

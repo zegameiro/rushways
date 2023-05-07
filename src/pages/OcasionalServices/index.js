@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useState } from "react";
 import Navbar from "../../Components/Navbar";
-// import Footer from "../../Components/Footer";
+import Footer from "../../Components/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Row, Col, Button } from "react-bootstrap";
-import { faArrowLeft, faMinus, faPlus, faCheck } from "@fortawesome/free-solid-svg-icons";
+import { Row, Col, Button, Container } from "react-bootstrap";
+import { faArrowLeft, faMinus, faPlus, faCheck, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import vehicles from "./vehicles"
 
 import "./index.css"
@@ -13,8 +13,7 @@ import "./index.css"
 const OcasionalServices = () => {
 
     const [page, setPage] = useState(1);
-    const [selectedVehicles, setSelectedVehicles] = useState([]);
-    const [isButtonActive, setIsButtonActive] = useState(false);
+    const [selectedVehicles, setSelectedVehicles] = useState({});
 
     const vehiclesPerPage = 5;
     const lastVehicleIndex = page * vehiclesPerPage;
@@ -45,35 +44,40 @@ const OcasionalServices = () => {
         });
     };
 
-    const handleVehicleSelect = (vehicleId) => {
-        const index = selectedVehicles.indexOf(vehicleId);
-
-        if(index === -1) {
-            setSelectedVehicles([...selectedVehicles, vehicleId]);
-        } else {
-            const updatedSelectedVehicles = [...selectedVehicles];
-            updatedSelectedVehicles.splice(index, 1);
-            setSelectedVehicles(updatedSelectedVehicles);
+    const canPurchase = () => {
+        for (const vehicleId in selectedVehicles) {
+            if (selectedVehicles[vehicleId] > 0) {
+                return false;
+            }
         }
+        return true;
     };
 
-    const handleConfirmationClick = () => {
-        const selectedVehiclesIds = selectedVehicles;
-        const totalVehiclesCount = vehicles.length;
-        const vehiclesCount = vehicles.reduce((counts, vehicle) =>{
-            counts[vehicle.id] = vehicle.count;
-            return counts;
-        }, {});
-        const confirmData = {
-            selectedVehiclesIds,
-            totalVehiclesCount,
-            vehiclesCount,
-        };
-    };
+    const getSelectedVehicles = () => {
+        const vehicleIds = [];
+        const vehicleQuantities = {};
+        let totalQuantity = 0;
 
-    useEffect(() => {
-        setIsButtonActive(selectedVehicles.length > 0);
-    }, [selectedVehicles]);
+        for (const vehicleId in selectedVehicles) {
+            const quantity = selectedVehicles[vehicleId];
+            if (quantity > 0) {
+                vehicleIds.push(parseInt(vehicleId));
+                vehicleQuantities[vehicleId] = quantity;
+                totalQuantity += quantity;
+            }
+        }
+
+        console.log("vehicleIds", vehicleIds);
+        console.log("vehicleQuantities", vehicleQuantities);
+        console.log("totalQuantity", totalQuantity);
+
+        return { vehicleIds, vehicleQuantities, totalQuantity };
+    }
+
+    const clearSelectedVehicles = () => {
+        setSelectedVehicles({});
+        console.log("Selected vehicles cleared", selectedVehicles);
+    };
 
     const getVehicleInfor = (vehicle) => {
         const { id, availableSeats, vehicleName, vehicleType, priceOneDay, isDriver, image } = vehicle;
@@ -100,7 +104,7 @@ const OcasionalServices = () => {
                     </>
                 ) : (
                     <>
-                        <Col sm={6} style={{paddingTop:"120px"}}>
+                        <Col sm={6} style={{paddingTop:"120px"}} className="vehicle-information">
                             <h4> <b>{vehicleName}</b> </h4>
                             <h5> <b>Price:</b> {getPrice(priceOneDay)}</h5>
                             <h5> <b>Available Seats:</b> {availableSeats}</h5>
@@ -165,8 +169,8 @@ const OcasionalServices = () => {
                             {Array(Math.ceil(vehicles.length / vehiclesPerPage))
                                 .fill()
                                 .map((_, i) => (
-                                    <li key={i} className={`page-item ${i + 1 === page ? "active" : null}`}>
-                                        <Button  variant="outline-primary" onClick={() => setPage(i + 1)}>
+                                    <li key={i} className={`page-item ${i + 1 === page ? "active" : null}`} >
+                                        <Button variant="outline" className="button-page-number" onClick={() => setPage(i + 1)} >
                                             {i + 1}
                                         </Button>
                                     </li>
@@ -176,9 +180,18 @@ const OcasionalServices = () => {
 
                 <br />
                 <br />
-                <Button variant="outline-warning" className="backbutton" disabled={!isButtonActive}> <FontAwesomeIcon icon={faCheck} onClick={handleConfirmationClick}/> Confirm Selection</Button>
-
+                <Container>
+                    <Row>
+                        <Col sm={6}>
+                            <Button variant="outline-danger" onClick={clearSelectedVehicles}> <FontAwesomeIcon icon={faTrashCan} /> Clear Selection</Button>
+                        </Col>
+                        <Col sm={6}>
+                            <Button variant="outline-success" disabled={canPurchase()} onClick={getSelectedVehicles}> <FontAwesomeIcon icon={faCheck} /> Confirm Selection</Button>
+                        </Col>
+                    </Row>
+                </Container>
             </div>
+            <Footer />
         </>
     );
 }

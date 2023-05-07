@@ -1,6 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+// import MovingServices from './pages/MovingServices';
 import OcasionalServices from './pages/OcasionalServices';
 // import Homepage from './Homepage';
 
