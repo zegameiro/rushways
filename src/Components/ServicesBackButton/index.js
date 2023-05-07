@@ -9,8 +9,8 @@ import './index.css';
 const ServicesBackButton = () => {
 
     return (
-        <div className='services-back-button'>
-            <Button variant='outline-primary' style={{ marginRight: "10px" }}> <b><FontAwesomeIcon icon={faArrowLeft} /> Services </b> </Button>
+        <div>
+            <Button className="btn btn-secondary services-back-button"><b><FontAwesomeIcon icon={faArrowLeft} /> Services </b></Button>
         </div>
     );
 }

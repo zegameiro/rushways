@@ -1,3 +1,11 @@
 .services-back-button {
     background-color: #D9D9D9;
+    color: #000000;
+
+    position: absolute;
+    left: 78px;
+    top: 114px;
+    border-radius: 0px;
+
+    border: none;
 }
