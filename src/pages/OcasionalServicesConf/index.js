@@ -1,11 +1,28 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 
 const OcasionalServicesConf = () => {
 
-    const location = useLocation();
-    const vehicleIds = location.search.split("=")[1].split(",").map(Number);
-    console.log("vehicleIds", vehicleIds);
+    const [vehicleIds, setVehicleIds] = useState([]);
+    const [vehicleQuantities, setVehicleQuantities] = useState({});
+    const [totalQuantity, setTotalQuantity] = useState(0);
+
+    const searchParams = useSearchParams();
+
+    useEffect(() => {
+        const params = Object.fromEntries(searchParams.entries());
+        setVehicleIds(params.vehicleIds.split(",").map(Number));
+        setVehicleQuantities(params);
+        setTotalQuantity(
+            Object.values(params).reduce((total, quantity) => total + Number(quantity), 0)
+        );
+    }, [searchParams]);
+
+    console.log("vehicleIds ", vehicleIds);
+    console.log("vehicleQuantities ", vehicleQuantities);
+    console.log("totalQuantity ", totalQuantity);
+
     return (
         <div>
             <h1>Confirmation Page</h1>

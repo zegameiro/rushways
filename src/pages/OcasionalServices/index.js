@@ -1,11 +1,12 @@
 import React from "react";
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Row, Col, Button, Container, ButtonGroup } from "react-bootstrap";
 import { faArrowLeft, faMinus, faPlus, faCheck, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
+import vehicles from "./vehicles.js";
 import Navbar from "../../Components/Navbar";
 import Footer from "../../Components/Footer";
 import "./index.css"
@@ -15,7 +16,7 @@ const OcasionalServices = () => {
 
     const [page, setPage] = useState(1);
     const [selectedVehicles, setSelectedVehicles] = useState({});
-    const history = useHistory();
+    const [searchParams, setSearchParams] = useSearchParams();
 
     const vehiclesPerPage = 5;
     const lastVehicleIndex = page * vehiclesPerPage;
@@ -77,14 +78,13 @@ const OcasionalServices = () => {
     }
 
     const handleConfirmSelection = () => {
-        const { vehicleIds, vehicleQuantities, totalQuantity } = getSelectedVehicles();
-        const queryParams = new URLSearchParams({
-            vehicleIds: vehicleIds.join(","),
-            vehicleQuantities: JSON.stringify(vehicleQuantities),
-            totalQuantity
-        });
-        history.push('/OcasionalServicesConf?${queryParams}');       
+        setSearchParams({ selectedVehicles: JSON.stringify(selectedVehicles)});
+        setPage(1);
+        setSelectedVehicles({});
+        console.clear();
+        window.location.href = "/ocasionalservicesconf";
     };
+
 
     const clearSelectedVehicles = () => {
         setSelectedVehicles({});
@@ -203,7 +203,13 @@ const OcasionalServices = () => {
                             <Button variant="outline-danger" onClick={clearSelectedVehicles}> <FontAwesomeIcon icon={faTrashCan} /> Clear Selection</Button>
                         </Col>
                         <Col sm={6}>
-                            <Button variant="outline-success" disabled={canPurchase()} onClick={handleConfirmSelection}> <FontAwesomeIcon icon={faCheck} href="/ocasionalservicesconf"/> Confirm Selection</Button>
+                            <Button 
+                                variant="outline-success" 
+                                disabled={canPurchase()} 
+                                onClick={handleConfirmSelection}
+                            > 
+                                <FontAwesomeIcon icon={faCheck} /> Confirm Selection
+                            </Button>
                         </Col>
                     </Row>
                 </Container>
