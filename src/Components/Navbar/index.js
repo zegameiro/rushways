@@ -1,37 +1,66 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, ButtonGroup, Dropdown } from 'react-bootstrap'
+import { Container, Nav, Navbar, NavDropdown, Offcanvas } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBus, faUser, faUserPlus } from '@fortawesome/free-solid-svg-icons'
 
-import './index.css';
+import '../Navbar/index.css';
 
 
-const Navbar = () => {
+const navbar = () => {
 
     const logoImage = require('../../images/Logos/rw_logo_colored_no_back.png')
+    const NavDropdownTitle = 
+        <b>
+            <FontAwesomeIcon icon={faBus} /> Services
+        </b>;
 
-    return (
-        <nav className='navbar'>
-            <a href='/'>
-                <img href="/" src={ logoImage } alt="logo"/>
-            </a>
-            <div className='links'>
-                <Dropdown as={ButtonGroup} style={{paddingRight: "550px"}}>
-                    <Button variant="outline"> <b><FontAwesomeIcon icon={faBus} /> Services </b> </Button>
-
-                    <Dropdown.Toggle split variant="outline" id="dropdown-split-basic"/>
-                    <Dropdown.Menu style={{borderColor:"orangered"}}>
-                        <Dropdown.Item href="/ocasionalservices" className='dropdown-menu-item'><b>Short Term Rental Service</b></Dropdown.Item>
-                        <Dropdown.Item href="#/action-2" className='dropdown-menu-item'><b>Long Term Contracts</b></Dropdown.Item>
-                        <Dropdown.Item href="/movingservices" className='dropdown-menu-item'><b>Moving service</b></Dropdown.Item>
-                    </Dropdown.Menu>
-                </Dropdown>
-                <Button variant='outline' style={{marginRight:"10px"}}> <b><FontAwesomeIcon icon={faUser} /> Login </b> </Button>
-                <Button variant='outline'> <b> <FontAwesomeIcon icon={faUserPlus} /> Sign Up </b> </Button>
-            </div>
-        </nav>
+    return (    
+        <>
+        {['lg'].map((expand) => (
+          <Navbar key={expand} bg="light" variant="warning" expand={expand} className="mb-3" >
+            <Container fluid>
+              <Navbar.Brand href="/">
+                <img src={logoImage} width="300px" style={{paddingTop:"10px"}} />
+              </Navbar.Brand>
+              <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
+              <Navbar.Offcanvas
+                id={`offcanvasNavbar-expand-${expand}`}
+                aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
+                placement="end"
+                style={{color:"orangered"}}
+              >
+                <Offcanvas.Header closeButton>
+                  <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
+                    <a href='/'>
+                        <img src={logoImage} width="300px"/>
+                    </a>
+                  </Offcanvas.Title>
+                </Offcanvas.Header>
+                <Offcanvas.Body>
+                  <Nav className="justify-content-center flex-grow-1 pe-3   dropdown-navbar">
+                    <NavDropdown
+                      title={NavDropdownTitle}
+                      id={`offcanvasNavbarDropdown-expand-${expand}`}
+                    >
+                      <NavDropdown.Item href="/ocasionalservices">Ocasional Services</NavDropdown.Item>
+                      <NavDropdown.Item href="#action4">Long Term Contracts</NavDropdown.Item>
+                      <NavDropdown.Item href="/movingservices">Moving Services</NavDropdown.Item>
+                      <NavDropdown.Divider />
+                      <NavDropdown.Item href="#action5">Services</NavDropdown.Item>
+                    </NavDropdown>
+                </Nav>
+                <Nav className="justify-content-end flex-grow-1 pe-3">
+                    <Nav.Link href="#action1"> <b> <FontAwesomeIcon icon={faUser} /> Login </b> </Nav.Link>
+                    <Nav.Link href="#action2"> <b> <FontAwesomeIcon icon={faUserPlus} /> Sign Up </b> </Nav.Link>
+                </Nav>
+                </Offcanvas.Body>
+              </Navbar.Offcanvas>
+            </Container>
+          </Navbar>
+        ))}
+      </>
     );
 }
 
-export default Navbar;
+export default navbar;

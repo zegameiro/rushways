@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import {  Row, Col } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faYoutube, faLinkedin, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faCopyright } from "@fortawesome/free-regular-svg-icons";
@@ -27,42 +27,42 @@ const Footer = () => {
     return (
         <footer className="footer">
                 <div className="values">
-                    <div style={{paddingBottom:"10px"}}>
+                    <div style={{paddingBottom:"40px"}}>
                         <h2>Our Impact Goals</h2>
                     </div>
-                    <Container>
-                        <Row style={{paddingBottom:"30px"}} xs={6} md={4} lg={3} xl={3}>
-                            {information.map((info) => (
+                        <Row style={{paddingBottom:"30px", paddingLeft:"20px", paddingRight:"100px"}} >
+                            {information.map((info, index) => (
                                 <>
-                                    <Col>
+                                    <Col sm={4} key={index}>
                                         <h5>{info.title}</h5>
                                         <h6>{info.description}</h6>
                                     </Col>
                                 </>
                             ))}
                         </Row>
-                        <Row xs={6} md={4} lg={4}>
+                        <Row>
                             <Col>
-                                <h5>Follow us on social media</h5>
-                                <div className="icons">
-                                    <FontAwesomeIcon icon={faFacebook} />
-                                    <FontAwesomeIcon icon={faTwitter} />
-                                    <FontAwesomeIcon icon={faYoutube} />
-                                    <FontAwesomeIcon icon={faLinkedin} />
-                                    <FontAwesomeIcon icon={faInstagram} /> 
+                                <div style={{paddingTop:"20px"}}>
+                                    <h5>Follow us on social media</h5>
+                                    <div className="icons" >
+                                        <FontAwesomeIcon icon={faFacebook} />
+                                        <FontAwesomeIcon icon={faTwitter} />
+                                        <FontAwesomeIcon icon={faYoutube} />
+                                        <FontAwesomeIcon icon={faLinkedin} />
+                                        <FontAwesomeIcon icon={faInstagram} /> 
+                                    </div>
                                 </div>
                             </Col>
-                            <Col>
-                                <img src={ logoWhite } width="300px" style={{paddingBottom: "10px"}}/>
-                                <p style={{color:"white"}}> <FontAwesomeIcon icon={faCopyright} /> Copy Right 2022/2023 </p>
+                            <Col style={{alignItems:"center", alignContent:"center", textAlign:"center"}}>
+                                <img src={ logoWhite } width="300px" style={{paddingBottom: "40px"}}/>
+                                <p style={{color:"white"}}> <FontAwesomeIcon icon={faCopyright} /> Copy Right 2022/2023 RushWays UA</p>
                             </Col>
-                            <Col>
+                            <Col style={{alignItems:"center", alignContent:"center", textAlign:"center"}}>
                                 <h5>Contact Us</h5>
                                 <h6>235645123</h6>
                                 <h6>rushways@ua.pt</h6>
                             </Col>
                         </Row>
-                    </Container>    
                 </div>
         </footer>
     );
