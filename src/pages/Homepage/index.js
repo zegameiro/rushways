@@ -1,14 +1,14 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Navbar from './Components/Navbar';
-import Footer from './Components/Footer';
+import Navbar from '../../Components/Navbar';
+import Footer from '../../Components/Footer';
 
 import './Homepage.css';
 
 const Homepage = () => {
 
-    const vanImage = require('./images/Homepage/van.png')
-    const carImage = require('./images/Homepage/car fleet.png')
+    const vanImage = require('../../images/Homepage/van.png')
+    const carImage = require('../../images/Homepage/car_fleet.png')
     
     return (
         <>
@@ -47,7 +47,7 @@ const Homepage = () => {
                     
                 </div>
             </div>
-            
+            <Footer />
         </>
     );
 

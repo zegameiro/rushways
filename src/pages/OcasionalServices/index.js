@@ -3,7 +3,7 @@ import { useState } from "react";
 import Navbar from "../../Components/Navbar";
 import Footer from "../../Components/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Row, Col, Button, Container } from "react-bootstrap";
+import { Row, Col, Button, Container, ButtonGroup } from "react-bootstrap";
 import { faArrowLeft, faMinus, faPlus, faCheck, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import vehicles from "./vehicles"
 
@@ -89,7 +89,7 @@ const OcasionalServices = () => {
                         <Col sm={6}>
                             <img src={image} alt={vehicleName} />
                         </Col>
-                        <Col sm={6} style={{paddingTop:"120px"}}>
+                        <Col sm={6} style={{paddingTop:"120px"}} className="vehicle-information">
                             <h4> <b>{vehicleName}</b> </h4>
                             <h5> <b>Price:</b> {getPrice(priceOneDay)}</h5>
                             <h5> <b>Available Seats:</b> {availableSeats}</h5>
@@ -170,9 +170,13 @@ const OcasionalServices = () => {
                                 .fill()
                                 .map((_, i) => (
                                     <li key={i} className={`page-item ${i + 1 === page ? "active" : null}`} >
-                                        <Button variant="outline" className="button-page-number" onClick={() => setPage(i + 1)} >
-                                            {i + 1}
-                                        </Button>
+                                        <ButtonGroup aria-label="Toolbar with button groups">
+                                            <ButtonGroup className="me-2" aria-label="First group">
+                                                <Button variant="outline" className="button-page-number" onClick={() => setPage(i + 1)} >
+                                                    {i + 1}
+                                                </Button> 
+                                            </ButtonGroup>{' '}
+                                        </ButtonGroup>
                                     </li>
                             ))}
                         </ul>
