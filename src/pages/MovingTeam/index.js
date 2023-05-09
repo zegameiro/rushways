@@ -8,8 +8,20 @@ import Footer from "../../Components/Footer";
 import MovingServices_1 from '../../images/MovingTeam/MovingTeam_1.jpg';
 import MovingServices_2 from '../../images/MovingTeam/MovingTeam_2.jpg';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import ThankYouScreen from '../../Components/ThankYouScreen';
+import { useState } from 'react';
+
 
 const MovingTeam = () => {
+    const [isShown, setIsShown] = useState(false);
+
+    const handleClick = event => {
+        // 👇️ toggle shown state
+        // setIsShown(current => !current);
+
+        // 👇️ or simply set it to true
+        setIsShown(true);
+    };
 
     return (
         <>
@@ -56,11 +68,15 @@ const MovingTeam = () => {
                             <textarea className="form-control shadow-none" placeholder="Large sofa 8x2 meters" id="floatingTextarea2" style={{ height: 100 + 'px' }}></textarea>
                             <label htmlFor="floatingTextarea2">EXTRA DETAILS (LARGE ITEMS, ETC.)</label>
                         </div>
-                        <div className='container mb-5' style={{display: 'flex', justifyContent: 'center'}}>
+                        <div className='container mb-5' style={{ display: 'flex', justifyContent: 'center' }}>
 
                             <div className='buttons'>
                                 <button type="cancel" className="btn btn-secondary">Cancel</button>
-                                <button type="submit" className="btn btn-primary">Submit</button>
+                                <div>
+                                    <button type="submit" onClick={handleClick} className="btn btn-primary">Submit</button>
+                                    {isShown && <ThankYouScreen />}
+                                </div>
+
                             </div>
                         </div>
                     </form>
@@ -69,6 +85,7 @@ const MovingTeam = () => {
             <Footer />
         </>
     );
+
 
 }
 

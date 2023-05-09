@@ -1,0 +1,14 @@
+.thank-you-screen {
+    position: absolute;
+    width: 1397px;
+    height: 910px;
+    left: 166px;
+    top: 482px;
+    background: rgba(225, 102, 75, 0.9);
+    border-radius: 30px;
+}
+
+.btn-primary {
+    background: #EA9937;
+    border-radius: 9px;
+}
