@@ -75,7 +75,7 @@
 	margin-top: 8px;
 }
 
-.cardServices .info button {
+.cardServices .info .buttonServices {
 	padding: 0.6rem;
 	outline: none;
 	border: none;
@@ -87,7 +87,7 @@
 	transition: 0.4s ease;
 }
 
-.cardServices .info button:hover {
+.cardServices .info .buttonServices:hover {
 	background: orangered;
 	color: white;
 }

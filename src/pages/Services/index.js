@@ -37,7 +37,7 @@ const Services = () => {
                             <h4>Ocasional Services</h4>
                             <p>This service caters to individuals or businesses seeking transportation solutions for a short period of time destined to either people or goods.</p>
                             <a href="/ocasionalservices">
-                                <button >Read More</button>
+                                <button className="buttonServices">Read More</button>
                             </a>
                         </div>
                     </div>
@@ -49,7 +49,7 @@ const Services = () => {
                             <h1> <FontAwesomeIcon icon={faHandshake} /> </h1>
                             <h4>Long Term Contracts</h4>
                             <p>This service is designed to cater to businesses, or institutions seeking extended and frequent transportation solutions. Our services are especially suitable for those interested in long-term rental options.</p>
-                            <button>Read More</button>
+                            <button className="buttonServices">Read More</button>
                         </div>
                     </div>
                 </Col> 
@@ -61,7 +61,7 @@ const Services = () => {
                             <h4>Moving Services</h4>
                             <p>If you're searching for support during your home relocation, our services can provide the help you need.</p>
                             <a href="/movingservices">
-                                <button>Read More</button>
+                                <button className="buttonServices">Read More</button>
                             </a>
                         </div>
                     </div>
