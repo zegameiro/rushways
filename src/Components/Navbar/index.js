@@ -7,7 +7,7 @@ import { faBus, faUser, faUserPlus } from '@fortawesome/free-solid-svg-icons'
 import '../Navbar/index.css';
 
 
-const navbar = () => {
+const NavbarRush = () => {
 
     const logoImage = require('../../images/Logos/rw_logo_colored_no_back.png')
     const NavDropdownTitle = 
@@ -47,7 +47,7 @@ const navbar = () => {
                       <NavDropdown.Item href="#action4">Long Term Contracts</NavDropdown.Item>
                       <NavDropdown.Item href="/movingservices">Moving Services</NavDropdown.Item>
                       <NavDropdown.Divider />
-                      <NavDropdown.Item href="#action5">Services</NavDropdown.Item>
+                      <NavDropdown.Item href="/services">Services</NavDropdown.Item>
                     </NavDropdown>
                 </Nav>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
@@ -63,4 +63,4 @@ const navbar = () => {
     );
 }
 
-export default navbar;
+export default NavbarRush;

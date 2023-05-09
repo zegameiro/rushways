@@ -1,6 +1,6 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Navbar from '../../Components/Navbar';
+import NavbarRush from '../../Components/Navbar';
 import Footer from '../../Components/Footer';
 
 import '../Homepage/index.css'
@@ -12,7 +12,7 @@ const Homepage = () => {
     
     return (
         <>
-            <Navbar />
+            <NavbarRush />
             <div style={{height:5000}}>
                 <div className="first_element">
                     <h1>Get Moving with us</h1>
