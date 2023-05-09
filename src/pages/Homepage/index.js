@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from '../../Components/Navbar';
 import Footer from '../../Components/Footer';
 
-import './Homepage.css';
+import '../Homepage/index.css'
 
 const Homepage = () => {
 

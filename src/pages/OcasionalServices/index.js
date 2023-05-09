@@ -1,12 +1,14 @@
 import React from "react";
 import { useState } from "react";
-import Navbar from "../../Components/Navbar";
-import Footer from "../../Components/Footer";
+import { useSearchParams } from "react-router-dom";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Row, Col, Button, Container, ButtonGroup } from "react-bootstrap";
 import { faArrowLeft, faMinus, faPlus, faCheck, faTrashCan } from "@fortawesome/free-solid-svg-icons";
-import vehicles from "./vehicles"
 
+import vehicles from "./vehicles.js";
+import Navbar from "../../Components/Navbar";
+import Footer from "../../Components/Footer";
 import "./index.css"
 
 
@@ -14,6 +16,7 @@ const OcasionalServices = () => {
 
     const [page, setPage] = useState(1);
     const [selectedVehicles, setSelectedVehicles] = useState({});
+    const [searchParams, setSearchParams] = useSearchParams();
 
     const vehiclesPerPage = 5;
     const lastVehicleIndex = page * vehiclesPerPage;
@@ -74,8 +77,18 @@ const OcasionalServices = () => {
         return { vehicleIds, vehicleQuantities, totalQuantity };
     }
 
+    const handleConfirmSelection = () => {
+        setSearchParams({ selectedVehicles: JSON.stringify(selectedVehicles)});
+        setPage(1);
+        setSelectedVehicles({});
+        console.clear();
+        window.location.href = "/ocasionalservicesconf";
+    };
+
+
     const clearSelectedVehicles = () => {
         setSelectedVehicles({});
+        console.clear();
         console.log("Selected vehicles cleared", selectedVehicles);
     };
 
@@ -190,7 +203,13 @@ const OcasionalServices = () => {
                             <Button variant="outline-danger" onClick={clearSelectedVehicles}> <FontAwesomeIcon icon={faTrashCan} /> Clear Selection</Button>
                         </Col>
                         <Col sm={6}>
-                            <Button variant="outline-success" disabled={canPurchase()} onClick={getSelectedVehicles}> <FontAwesomeIcon icon={faCheck} /> Confirm Selection</Button>
+                            <Button 
+                                variant="outline-success" 
+                                disabled={canPurchase()} 
+                                onClick={handleConfirmSelection}
+                            > 
+                                <FontAwesomeIcon icon={faCheck} /> Confirm Selection
+                            </Button>
                         </Col>
                     </Row>
                 </Container>
@@ -201,27 +220,3 @@ const OcasionalServices = () => {
 }
 
 export default OcasionalServices;
-
-
-
-// Eu tenho um dicionário com dados sobre veículos e cada elemento contem as seguintes informações:
-// 1º id,
-// 2º available seats (número de lugares disponíveis,
-// 3ª vehicleName (nome do veículo)
-// 4º vehicleTYpe (se ele é elétrico ou não)
-// 5º priceOneDay (preço de aluguer para um dia)
-// 6º isDriver (se tem ou não condutor disponível, sendo este um boolean)
-// 7ª image (imagem do veículo)
-// Eu queria dispo-los na página que eu estou a construir de acordo com as seguintes condições:
-// 1º Só podem aparecer 5 de cada vez sendo que se existirem mais do que 5 deverá avançar para uma segunda página com os restantes;
-// 2ª Os veículos com o id ímpar deve de aparecer à esquerda a sua imagem e a informação dele à direita, já os veículos com id par deve de aparecer à direita a sua imagem e à esquerda a sua informação;
-// 3º Deve de existir uma barra a separar cada um deles;
-// 4ª Caso um veículo tenha 0.0 no atributo priceOneDay, deve de aparecer a frase "to be discussed"
-// 5ª Caso um veículo tenha false no atributo isDriver deve de aparecer a frase "not available" e se tiver true deve de aparecer "available";
-// 6ª As informações do veículo devem de aparecer da seguinte forma:
-//  Nome do veículo (maior)
-// Resto das informações (menor)
-// 7ª Colocar cada informação sobre o veículo numa row dividida por duas cols e estas têm que estar centradas
-// 8ª a arrow function que for criada deve de receber como argumento o dicionário com os dados dos veículos que se encontra noutro ficheiro e é necessário dar import deste ficheiro
-// 9ª Cada veículo deve de ter por baixo um botão que depois irá dar à página de alugar o veículo pretendido
-// Será que me podias ajudar a fazer isto em reat?
