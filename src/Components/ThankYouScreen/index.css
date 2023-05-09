@@ -1,14 +1,31 @@
 .thank-you-screen {
-    position: absolute;
-    width: 1397px;
-    height: 910px;
-    left: 166px;
-    top: 482px;
+    display: grid;
+    position: fixed;
+    width: 75%;
+    height: 80%;
+    top: 10%;
+    left: 15%;
     background: rgba(225, 102, 75, 0.9);
     border-radius: 30px;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
 }
 
-.btn-primary {
+.return-homepage {
     background: #EA9937;
     border-radius: 9px;
+}
+
+.thank-you-text {
+    max-width: 80%;
+    justify-content: center;
+    font-family: 'Anek Odia Medium';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 80px;
+
+    color: #FFFFFF;
 }

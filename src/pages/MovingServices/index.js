@@ -14,7 +14,7 @@ const MovingServices = () => {
     return (
         <>
             <Navbar />
-            <div className='container top-bar'>
+            <div className='container moving-services-top-bar'>
                 <ServicesBackButton />
                 <div>
                     <h1 className="moving-services-header">Moving Services</h1>

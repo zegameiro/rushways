@@ -29,13 +29,6 @@
     outline: none;
 }
 
-.top-bar {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 .banner-image-container {
     display: flex;
     flex-direction: row;

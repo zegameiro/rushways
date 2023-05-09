@@ -11,7 +11,7 @@
     color: #000000;
 }
 
-.top-bar {
+.moving-services-top-bar {
     display: flex;
     flex-direction: column;
     justify-content: center;

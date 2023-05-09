@@ -26,7 +26,7 @@ const MovingTeam = () => {
     return (
         <>
             <Navbar />
-            <div className='container top-bar'>
+            <div className='container moving-services-top-bar'>
                 <ServicesBackButton />
                 <div>
                     <h1 className="moving-team-header">Moving Team</h1>
@@ -72,15 +72,12 @@ const MovingTeam = () => {
 
                             <div className='buttons'>
                                 <button type="cancel" className="btn btn-secondary">Cancel</button>
-                                <div>
-                                    <button type="submit" onClick={handleClick} className="btn btn-primary">Submit</button>
-                                    {isShown && <ThankYouScreen />}
-                                </div>
-
+                                <button type="submit" onClick={handleClick} className="btn btn-primary">Submit</button>
                             </div>
                         </div>
                     </form>
                 </div>
+                <div>{isShown && <ThankYouScreen />}</div>
             </div>
             <Footer />
         </>
