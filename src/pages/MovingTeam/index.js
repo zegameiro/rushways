@@ -68,14 +68,14 @@ const MovingTeam = () => {
                             <textarea className="form-control shadow-none" placeholder="Large sofa 8x2 meters" id="floatingTextarea2" style={{ height: 100 + 'px' }}></textarea>
                             <label htmlFor="floatingTextarea2">EXTRA DETAILS (LARGE ITEMS, ETC.)</label>
                         </div>
-                        <div className='container mb-5' style={{ display: 'flex', justifyContent: 'center' }}>
 
-                            <div className='buttons'>
-                                <button type="cancel" className="btn btn-secondary">Cancel</button>
-                                <button type="submit" onClick={handleClick} className="btn btn-primary">Submit</button>
-                            </div>
-                        </div>
                     </form>
+                    <div className='container mb-5' style={{ display: 'flex', justifyContent: 'center' }}>
+                        <div className='buttons'>
+                            <button type="cancel" className="btn btn-secondary">Cancel</button>
+                            <button type="submit" onClick={handleClick} className="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
                 </div>
                 <div>{isShown && <ThankYouScreen />}</div>
             </div>
