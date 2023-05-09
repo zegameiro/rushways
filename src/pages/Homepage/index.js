@@ -9,11 +9,12 @@ const Homepage = () => {
 
     const vanImage = require('../../images/Homepage/van.png')
     const carImage = require('../../images/Homepage/car_fleet.png')
+    const brandImage = require('../../images/Homepage/brand.png')
     
     return (
         <>
             <Navbar />
-            <div style={{height:5000}}>
+            <div style={{height:2700}}>
                 <div className="first_element">
                     <h1>Get Moving with us</h1>
                     <h4 className="one">Join the RushWays community and stop<p></p>
@@ -45,6 +46,9 @@ const Homepage = () => {
                         <img src={carImage} alt="fleet" className="image2"></img>
                     </div>
                     
+                </div>
+                <div className="fourth_element">
+                    <img src={brandImage} alt="brand" className="image3"></img>
                 </div>
             </div>
             <Footer />
