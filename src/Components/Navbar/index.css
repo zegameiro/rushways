@@ -1,3 +1,7 @@
 .dropdown-navbar {
     color:orangered !important;
 }
+
+.dropdown-item:active{
+    background-color: transparent !important;
+}
