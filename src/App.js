@@ -9,6 +9,7 @@ import Homepage from './pages/Homepage';
 import MovingTeam from './pages/MovingTeam';
 import MovingServices from './pages/MovingServices';
 import Services from './pages/Services';
+import AboutUs from './pages/AboutUs';
 
 const App = () => {
 
@@ -22,6 +23,7 @@ const App = () => {
                 <Route path="/ocasionalservicesconf" element={ <OcasionalServicesConf />} />
                 <Route path="/movingteam" element={ <MovingTeam />} />
                 <Route path="/movingservices" element={ <MovingServices />} />
+                <Route paty="/aboutus" element={ <AboutUs />} />
             </Routes>
         </div>
     );

@@ -1,0 +1,40 @@
+.about_us .titulo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #000;
+
+}
+
+.about_us .one {
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+.about_us .one .p1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #000;
+    margin-top: 5%;
+}
+
+.about_us .one .p2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #000;
+    margin-top: 5%;
+}
+
+.about_us .one .p3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #000;
+    margin-top: 5%;
+}
