@@ -38,7 +38,7 @@ const Homepage = () => {
                 <div className="third_element">
                     <img src={vanImage} alt="van" className="image1"></img>
                 </div>
-                <div className="container">
+                <div className="container homepage-container-1">
                     <div className="text">
                         <h1 className="phrase4">Vehicles in<br></br><span className="RushWays">RushWays</span></h1>
                         <h4 className="phrase5">Find more information about the vehicles that <br></br> are available to you and explore various type<br></br> of services</h4>
