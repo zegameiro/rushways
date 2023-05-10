@@ -16,6 +16,7 @@
 .return-homepage {
     background: #EA9937;
     border-radius: 9px;
+    --bs-btn-active-bg: #EA9937;
 }
 
 .thank-you-text {

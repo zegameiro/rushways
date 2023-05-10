@@ -1,5 +1,8 @@
 .moving-link {
     text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }   
 
 .moving-services-header {
@@ -68,6 +71,11 @@
     line-height: 55px;
 
     color: #000000;
+}
+
+.moving-services-card-title {
+    display: grid;
+    justify-content: center;
 }
 
 .card-text {

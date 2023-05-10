@@ -23,12 +23,12 @@ const MovingServices = () => {
             <div className='container image-cards-container'>
                 <div className="card">
                     <div className="card-body">
-                        <a href='/movingteam'>
-                        <h5 className="card-title">Moving Team</h5>
+                        <a className='moving-link' href='/movingteam'>
+                        <h5 className="card-title moving-services-card-title">Moving Team</h5>
                         <p className="card-text">Complete moving team that will carry out the moving for you</p>
                         </a>
                     </div>
-                    <a href='/movingteam'>
+                    <a className='moving-link' href='/movingteam'>
                         <img src={MovingServices_1} className="card-img-bottom" alt="Moving team carrying boxes"></img>
                     </a>
                 </div>

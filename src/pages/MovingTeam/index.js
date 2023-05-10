@@ -32,12 +32,12 @@ const MovingTeam = () => {
                     <h1 className="moving-team-header">Moving Team</h1>
                 </div>
             </div>
-            <div className='banner-image-container'>
+            <div className='banner-image-container mt-0'>
                 <img src={MovingServices_1} className="banner-img" alt="Moving team carrying boxes"></img>
                 <img src={MovingServices_2} className="banner-img" alt="Man putting boxes in a rented van"></img>
             </div>
             <div className='container'>
-                <h2 className='form-title'>Information:</h2>
+                <h2 className='form-title mb-4'>Information:</h2>
                 <div className='container'>
                     <form>
                         <div className="form-floating mb-3 w-25 mx-4">

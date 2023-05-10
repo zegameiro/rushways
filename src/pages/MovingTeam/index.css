@@ -51,11 +51,15 @@
 .btn-primary {
     background: #EA9937;
     border-radius: 9px;
+    --bs-btn-border-color: none;
+    --bs-btn-hover-bg: #EA9937;
 }
 
 .btn-secondary {
     background: #EA3737;
     border-radius: 9px;
+    --bs-btn-border-color: none;
+    --bs-btn-hover-bg: #EA3737;
 }
 
 .buttons {
