@@ -1,14 +1,21 @@
-import React from "react";
+import React, {useState} from "react";
 import vehicles from "../OcasionalServices/vehicles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import { Row, Col, FloatingLabel, Form, Button } from "react-bootstrap";
+import { faCircleXmark, faCircleCheck } from "@fortawesome/free-solid-svg-icons";
+import { Row, Col, FloatingLabel, Form, Button, Modal } from "react-bootstrap";
 
 import NavbarRush from "../../Components/Navbar";
 import Footer from "../../Components/Footer";
 
+import "./index.css";
+
 const OcasionalServicesConf = () => {
+
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     const getPrice = (price) => {
         return price === 0.0 ? "to be discussed" : `$${price}/day`;
@@ -30,6 +37,8 @@ const OcasionalServicesConf = () => {
         return total;
     }
 
+    const totalPrice = getTotalPrice();
+
     const clearLocalStorage = () => {
         localStorage.removeItem('selectedVehiclesQuantities');
     }
@@ -41,10 +50,12 @@ const OcasionalServicesConf = () => {
             <div className="confirmation-page" style={{paddingLeft:"50px"}}>
                 <h1>Confirmation Page</h1>
                 <br />
-                <h3>Selected Vehicles:</h3>
+                <h3><b>Selected Vehicles:</b></h3>
                 <br />
                 <div>
                     {Object.keys(selectedVehiclesQuantities).map((vehicleId) => {
+                        const vehicle = vehicles[vehicleId - 1];
+                        const showDriverOption = vehicle.isDriver;
                         return (
                             <>
                                 <Row>
@@ -52,22 +63,49 @@ const OcasionalServicesConf = () => {
                                         <img src={vehicles[vehicleId - 1].image} alt={vehicles[vehicleId - 1].vehicleName} />
                                     </Col>
                                     <Col sm={6} style={{paddingTop:"120px"}} className="vehicle-information">
-                                        <h4> <b>{vehicles[vehicleId - 1].vehicleName}</b> </h4>
-                                        <h5> <b>Price:</b> {getPrice(vehicles[vehicleId - 1].priceOneDay)}</h5>
-                                        <h5> <b>Available Seats:</b> {vehicles[vehicleId - 1].availableSeats}</h5>
-                                        <h5> <b>Vehicle Type:</b> {vehicles[vehicleId - 1].vehicleType}</h5>
-                                        <h5> <b>Driver:</b> {getIsDriver(vehicles[vehicleId - 1].isDriver)}</h5>
+                                        <h4> <b>{vehicle.vehicleName}</b> </h4>
+                                        <h5> <b>Price:</b> {getPrice(vehicle.priceOneDay)}</h5>
+                                        <h5> <b>Available Seats:</b> {vehicle.availableSeats}</h5>
+                                        <h5> <b>Vehicle Type:</b> {vehicle.vehicleType}</h5>
+                                        <h5> <b>Driver:</b> {getIsDriver(vehicle.isDriver)}</h5>
                                         <h5> <b>Number of vehicles choosen: {selectedVehiclesQuantities[vehicleId]}</b> </h5>
                                     </Col>
+                                    <Col sm={6}>
+                                        {showDriverOption && (
+                                            <Form>
+                                                <h4>Include driver</h4>
+                                                {['radio'].map((type) => (
+                                                    <div key={`inline-${type}`} className="mb-3">
+                                                        <Form.Check
+                                                            inline
+                                                            label="Yes"
+                                                            name="group1"
+                                                            type={type}
+                                                            id={`inline-${type}-1`}
+                                                        />
+                                                        <Form.Check
+                                                            inline
+                                                            label="No"
+                                                            name="group1"
+                                                            type={type}
+                                                            id={`inline-${type}-2`}
+                                                        />
+                                                    </div>
+                                                ))}
+                                            </Form>
+                                        )}
+                                    </Col>
+                                    <br />
                                 </Row>
+                                
                             </>
                         );
                     })}
                 </div>
                 <br />
-                <h3>Estimated Total Price: {getTotalPrice}</h3>
+                <h3> <b>Estimated Total Price:</b> {totalPrice} $</h3>
                 <br />
-                <h3>Personal Information:</h3>
+                <h3> <b>Personal Information:</b> </h3>
                 <br />
                 <div style={{paddingLeft:"100px",paddingRight:"100px"}}>
                     <Row>
@@ -150,7 +188,29 @@ const OcasionalServicesConf = () => {
                     </Row>
                 </div>
                 <br />
-                <Button variant="outline-danger" href="/ocasionalservices" onClick={clearLocalStorage}> <b> <FontAwesomeIcon icon={faXmark}/> Cancel</b></Button>
+                <Row className="justify-content-center">
+                    <Col sm={2} className="text-center">
+                        <Button variant="outline-danger" href="/ocasionalservices" onClick={clearLocalStorage}> <b> <FontAwesomeIcon icon={faCircleXmark}/> Cancel</b></Button>
+                    </Col>
+                    <Col sm={2} className="text-center">
+                        <Button variant="outline-success" onClick={handleShow}> <b> <FontAwesomeIcon icon={faCircleCheck} /> Confirm</b></Button>
+                        <Modal show={show} onHide={handleClose} style={{borderColor:"orangered"}}>
+                            <Modal.Header closeButton>
+                                <Modal.Title> <b>Thank you for you're submition</b></Modal.Title>
+                            </Modal.Header>
+                            <Modal.Body>Our company will enter in contact with you during the next 2-3 days to discuss the price and additional information </Modal.Body>
+                            <Modal.Body>Any questions you may have, you can contact us or you can visit our facilitie in you're region Leiria</Modal.Body>
+                            <Modal.Body>Have a nice day!</Modal.Body>
+                            <Modal.Footer>
+                                <Button variant="outline" href="/" className="button-return-hp">
+                                    Return to Home Page
+                                </Button>
+                            </Modal.Footer>
+                        </Modal>
+                    </Col>
+                </Row>
+                <br />
+                <br />
             </div>
             <Footer />
         </>

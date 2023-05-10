@@ -8,6 +8,7 @@ import OcasionalServicesDif from './pages/OcasionalServicesDif';
 import Homepage from './pages/Homepage';
 import MovingTeam from './pages/MovingTeam';
 import MovingServices from './pages/MovingServices';
+import MovingServiceNoTeam from './pages/MovingServicesNoTeam';
 import Services from './pages/Services';
 import AboutUs from './pages/AboutUs';
 
@@ -23,7 +24,8 @@ const App = () => {
                 <Route path="/ocasionalservicesconf" element={ <OcasionalServicesConf />} />
                 <Route path="/movingteam" element={ <MovingTeam />} />
                 <Route path="/movingservices" element={ <MovingServices />} />
-                <Route paty="/aboutus" element={ <AboutUs />} />
+                <Route path="/movingservicesnoteam" element={ <MovingServiceNoTeam />} />
+                <Route path="/aboutus" element={ <AboutUs />} />
             </Routes>
         </div>
     );
