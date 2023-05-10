@@ -2,6 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route, Routes } from 'react-router-dom';
 
+import LongTermContracts from './pages/LongTermContracts';
 import OcasionalServices from './pages/OcasionalServices';
 import OcasionalServicesConf from './pages/OcasionalServicesConf';
 import OcasionalServicesDif from './pages/OcasionalServicesDif';
@@ -23,6 +24,7 @@ const App = () => {
                 <Route path="/ocasionalservicesdif" element={ <OcasionalServicesDif />} />
                 <Route path="/ocasionalservices" element={ <OcasionalServices />} />
                 <Route path="/ocasionalservicesconf" element={ <OcasionalServicesConf />} />
+                <Route path="/longtermcontracts" element={ <LongTermContracts /> } />
                 <Route path="/movingteam" element={ <MovingTeam />} />
                 <Route path="/movingservices" element={ <MovingServices />} />
                 <Route path="/movingservicesnoteam" element={ <MovingServiceNoTeam />} />
