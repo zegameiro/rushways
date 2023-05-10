@@ -24,8 +24,8 @@ const MovingServices = () => {
                 <div className="card">
                     <div className="card-body">
                         <a className='moving-link' href='/movingteam'>
-                        <h5 className="card-title moving-services-card-title">Moving Team</h5>
-                        <p className="card-text">Complete moving team that will carry out the moving for you</p>
+                            <h5 className="card-title moving-services-card-title">Moving Team</h5>
+                            <p className="card-text">Complete moving team that will carry out the moving for you</p>
                         </a>
                     </div>
                     <a className='moving-link' href='/movingteam'>
@@ -33,11 +33,15 @@ const MovingServices = () => {
                     </a>
                 </div>
                 <div className="card">
-                    <div className="card-body">
-                        <h5 className="card-title">Rent a van</h5>
-                        <p className="card-text">Just rent a van to transport the goods (no moving team)</p>
+                    <div className="card-body text-center">
+                        <a className='moving-link' href='/movingservicesnoteam'>
+                            <h5 className="card-title">Rent a van</h5>
+                            <p className="card-text">Just rent a van to transport the goods (no moving team)</p>
+                        </a>
                     </div>
-                    <img src={MovingServices_2} className="card-img-bottom" alt="Man putting boxes in a rented van"></img>
+                    <a className='moving-link' href='/movingservicesnoteam'>
+                        <img src={MovingServices_2} className="card-img-bottom" alt="Man putting boxes in a rented van"></img>
+                    </a>
                 </div>
             </div>
             <Footer />

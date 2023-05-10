@@ -154,14 +154,21 @@ const OcasionalServices = () => {
                 <br />
                 <div className="image-ocasional">
                     <br />
-
-                    <h3>Welcome to our car rental page! </h3>
-                    <br />
-                    <div style={{height:"500px",width:"500px",margin:"auto"}}>
+                    <div className="image-ocasional-text">
+                        <h3>Welcome to our car rental page! </h3>
+                        <br />
                         <h5>
                             <b> Here you can select the type of vehicle you would like to rent, choose the number of vehicles you need, and even filter the options to find the perfect fit. </b>
                         </h5>
                     </div>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
                 </div>
 
                 <br />

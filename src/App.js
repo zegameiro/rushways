@@ -9,6 +9,7 @@ import Homepage from './pages/Homepage';
 import MovingTeam from './pages/MovingTeam';
 import MovingServices from './pages/MovingServices';
 import MovingServiceNoTeam from './pages/MovingServicesNoTeam';
+import MovingServicesNoTeamConf from './pages/MovingServicesNoTeamConf';
 import Services from './pages/Services';
 import AboutUs from './pages/AboutUs';
 
@@ -25,6 +26,7 @@ const App = () => {
                 <Route path="/movingteam" element={ <MovingTeam />} />
                 <Route path="/movingservices" element={ <MovingServices />} />
                 <Route path="/movingservicesnoteam" element={ <MovingServiceNoTeam />} />
+                <Route path="/movingservicesnoteamconf" element={ <MovingServicesNoTeamConf />} />
                 <Route path="/aboutus" element={ <AboutUs />} />
             </Routes>
         </div>

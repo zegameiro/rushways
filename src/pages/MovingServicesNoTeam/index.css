@@ -1,14 +1,16 @@
-.movingservicesnoteam {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding-left: 10px;
-    text-align: center;
-    align-items: center;
+.banner-movingservicesnoteam {
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../images/MovingServiceNoTeam/banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }
 
-.image-movingnoteam {
-    position: relative;
+.banner-movingnoteam-text {
     text-align: center;
-    font-size: 30px;
-    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
 }

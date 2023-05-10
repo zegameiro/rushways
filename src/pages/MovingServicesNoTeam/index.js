@@ -5,12 +5,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Row, Col, Button, Container, ButtonGroup } from "react-bootstrap";
 import { faMinus, faPlus, faCheck, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
-import vehicles from "./vehicles.js";
+import vehiclesM from "./vehicles.js";
 import NavbarRush from "../../Components/Navbar";
 import Footer from "../../Components/Footer";
 import ServicesBackButton from "../../Components/ServicesBackButton/index.js";
 
-import "../MovingServicesNoTeam/index.css"
+import "./index.css"
 
 const MovingServiceNoTeam = () => {
     const [page, setPage] = useState(1);
@@ -19,7 +19,7 @@ const MovingServiceNoTeam = () => {
     const vehiclesPerPage = 5;
     const lastVehicleIndex = page * vehiclesPerPage;
     const firstVehicleIndex = lastVehicleIndex - vehiclesPerPage;
-    const currentVehicles = vehicles.slice(firstVehicleIndex, lastVehicleIndex);
+    const currentVehicles = vehiclesM.slice(firstVehicleIndex, lastVehicleIndex);
 
     const getPrice = (price) => {
         return price === 0.0 ? "to be discussed" : `$${price}/day`;
@@ -90,10 +90,10 @@ const MovingServiceNoTeam = () => {
             <Row>
                 {id % 2 === 0 ? (
                     <>
-                        <Col sm={6} style={{paddingLeft:"10px"}}>
+                        <Col sm={6} style={{paddingLeft:"10px"}} className="text-center">
                             <img src={vehicleImage} alt={vehicleName} />
                         </Col>
-                        <Col sm={6} style={{paddingTop:"120px", paddingLeft:"10px"}} className="vehicle-information">
+                        <Col sm={6} style={{paddingTop:"120px", paddingLeft:"10px"}} className="vehicle-information text-center">
                             <h4> <b>{vehicleName}</b> </h4>
                             <h5> <b>Price:</b> {getPrice(priceOneDay)}</h5>
                             <h5> <b>Available Seats:</b> {availableSeats}</h5>
@@ -107,7 +107,7 @@ const MovingServiceNoTeam = () => {
                     </>
                 ) : (
                     <>
-                        <Col sm={6} style={{paddingTop:"120px"}} className="vehicle-information">
+                        <Col sm={6} style={{paddingTop:"120px"}} className="vehicle-information text-center">
                             <h4> <b>{vehicleName}</b> </h4>
                             <h5> <b>Price:</b> {getPrice(priceOneDay)}</h5>
                             <h5> <b>Available Seats:</b> {availableSeats}</h5>
@@ -116,7 +116,7 @@ const MovingServiceNoTeam = () => {
                             <span style={{padding:"10px"}}> {selectedVehicles[id] || 0} </span>
                             <Button variant="light" onClick={() => incrementValue(id)}> <FontAwesomeIcon icon={faPlus} /> </Button>
                         </Col>
-                        <Col sm={6}>
+                        <Col sm={6} className="text-center">
                             <img src={vehicleImage} alt={vehicleName} style={{height:"400px",width:"700px"}}/>
                         </Col>
                     </>
@@ -135,41 +135,53 @@ const MovingServiceNoTeam = () => {
                             <ServicesBackButton />
                         </a>
                     </Col>
-                    <Col sm={7} style={{paddingBottom:"20px"}}>
+                    <Col sm={7} style={{paddingBottom:"20px"}} className="text-center">
                         <h4>Moving Services</h4>
                     </Col>
                 </Row>
+                <br />
                 <Row>
-                    <Col sm={5}>
+                    <Col sm={5} style={{paddingLeft:"100px"}}>
                         <h2>Rent a van</h2>
                     </Col>
                 </Row>
                 <br />
-                <div className="image-movingnoteam">
-                    <br />
 
-                    <h3>Welcome to our car rental page! </h3>
+                <div className="banner-movingservicesnoteam">
                     <br />
-                    <div style={{height:"500px",width:"500px",margin:"auto"}}>
+                    <div className="banner-movingnoteam-text">
+                        <h3>Welcome to our rent van page! </h3>
+                        <br />
                         <h5>
-                            <b> Here you can select the type of vehicle you would like to rent, choose the number of vehicles you need, and even filter the options to find the perfect fit. </b>
+                            <b> Here you can select the type of cargo van you would like to rent, choose the number of vans you need, and even filter the options to find the perfect fit. </b>
                         </h5>
                     </div>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
                 </div>
 
                 <br />
-                <h3>Vehicles available</h3>
-                <br />
-
-                <div>
+                <div style={{paddingLeft:"100px"}}>
+                    <h3>Vehicles available</h3>
+                </div>
+                <div>´
                     {currentVehicles.map((vehicle) => (
                         <div key={vehicle.id}>
                             {getVehicleInfor(vehicle)}
                             <hr />
                         </div>
                     ))}
-                        <ul className="pagination">
-                            {Array(Math.ceil(vehicles.length / vehiclesPerPage))
+                        <ul className="pagination" style={{paddingLeft:"30px"}}>
+                            {Array(Math.ceil(vehiclesM.length / vehiclesPerPage))
                                 .fill()
                                 .map((_, i) => (
                                     <li key={i} className={`page-item ${i + 1 === page ? "active" : null}`} >
@@ -188,7 +200,7 @@ const MovingServiceNoTeam = () => {
                 <br />
                 <br />
                 <Container>
-                    <Row>
+                    <Row className="text-center">
                         <Col sm={6}>
                             <Button variant="outline-danger" onClick={clearSelectedVehicles}> <FontAwesomeIcon icon={faTrashCan} /> Clear Selection</Button>
                         </Col>
@@ -197,7 +209,7 @@ const MovingServiceNoTeam = () => {
                                 variant="outline-success" 
                                 disabled={canPurchase()} 
                                 onClick={handleConfirmSelection}
-                                href="/ocasionalservicesconf"
+                                href="/movingservicesnoteamconf"
                             > 
                                 <FontAwesomeIcon icon={faCheck} /> Confirm Selection
                             </Button>
@@ -205,6 +217,8 @@ const MovingServiceNoTeam = () => {
                     </Row>
                 </Container>
             </div>
+            <br />
+            <br />
             <Footer />
         </>
     );
