@@ -44,7 +44,7 @@ const NavbarRush = () => {
                       id={`offcanvasNavbarDropdown-expand-${expand}`}
                     >
                       <NavDropdown.Item href="/ocasionalservicesdif">Ocasional Services</NavDropdown.Item>
-                      <NavDropdown.Item href="#action4">Long Term Contracts</NavDropdown.Item>
+                      <NavDropdown.Item href="/longtermcontracts">Long Term Contracts</NavDropdown.Item>
                       <NavDropdown.Item href="/movingservices">Moving Services</NavDropdown.Item>
                       <NavDropdown.Divider />
                       <NavDropdown.Item href="/services">Services</NavDropdown.Item>
