@@ -1,0 +1,15 @@
+.button-return-hp {
+    background-color: white !important;
+    color: orangered !important;
+    border-color: orangered !important;
+}
+
+.button-return-hp:hover {
+    background-color: orangered !important;
+    color: white !important;
+}
+
+.button-return-hp:active {
+    background-color: orangered !important;
+    color: white !important;
+}
