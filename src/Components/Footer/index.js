@@ -26,7 +26,7 @@ const Footer = () => {
 
     return (
         <footer className="footer">
-                <div className="values">
+                <div className="information">
                     <div style={{paddingBottom:"40px"}}>
                         <h2>Our Impact Goals</h2>
                     </div>

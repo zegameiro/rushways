@@ -1,8 +1,7 @@
 import React from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 import NavbarRush from '../../Components/Navbar';
 import Footer from '../../Components/Footer';
-
 import '../Homepage/index.css'
 
 const Homepage = () => {
@@ -20,7 +19,9 @@ const Homepage = () => {
                     <h4 className="one">Join the RushWays community and stop<p></p>
                         worring about your transportation needs
                     </h4>
-                    <button className="ChooseService"><h5>Choose Service</h5></button>
+                    <a href="/services">
+                        <button className="ChooseService" ><h5>Choose Service</h5></button>
+                    </a>
                     <h4 className="two">Choose what type of service fits you better</h4>
                 </div>
                 <div className="second_element">

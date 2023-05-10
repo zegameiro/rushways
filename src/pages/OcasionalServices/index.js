@@ -1,14 +1,14 @@
 import React from "react";
 import { useState } from "react";
-import { useSearchParams } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Row, Col, Button, Container, ButtonGroup } from "react-bootstrap";
-import { faArrowLeft, faMinus, faPlus, faCheck, faTrashCan } from "@fortawesome/free-solid-svg-icons";
+import { faMinus, faPlus, faCheck, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
 import vehicles from "./vehicles.js";
 import NavbarRush from "../../Components/Navbar";
 import Footer from "../../Components/Footer";
+import ServicesBackButton from "../../Components/ServicesBackButton/index.js";
 import "./index.css"
 
 
@@ -16,7 +16,6 @@ const OcasionalServices = () => {
 
     const [page, setPage] = useState(1);
     const [selectedVehicles, setSelectedVehicles] = useState({});
-    const [searchParams, setSearchParams] = useSearchParams();
 
     const vehiclesPerPage = 5;
     const lastVehicleIndex = page * vehiclesPerPage;
@@ -78,11 +77,8 @@ const OcasionalServices = () => {
     }
 
     const handleConfirmSelection = () => {
-        setSearchParams({ selectedVehicles: JSON.stringify(selectedVehicles)});
-        setPage(1);
-        setSelectedVehicles({});
-        console.clear();
-        window.location.href = "/ocasionalservicesconf";
+        const selectedVehiclesQuantities = getSelectedVehicles().vehicleQuantities;
+        localStorage.setItem('selectedVehiclesQuantities', JSON.stringify(selectedVehiclesQuantities));
     };
 
 
@@ -142,7 +138,9 @@ const OcasionalServices = () => {
             <div className="ocasionalservices">
                 <Row>
                     <Col sm={2}>
-                        <Button variant="outline-warning" className="backbutton"> <FontAwesomeIcon icon={faArrowLeft}/> Go Back</Button>
+                        <a href="/ocasionalservicesdif">
+                            <ServicesBackButton />
+                        </a>
                     </Col>
                     <Col sm={7} style={{paddingBottom:"20px"}}>
                         <h4>Ocasional Services</h4>
@@ -156,8 +154,7 @@ const OcasionalServices = () => {
                 <br />
                 <div className="image-ocasional">
                     <br />
-                    <br />
-                    <br /> 
+
                     <h3>Welcome to our car rental page! </h3>
                     <br />
                     <div style={{height:"500px",width:"500px",margin:"auto"}}>
@@ -207,6 +204,7 @@ const OcasionalServices = () => {
                                 variant="outline-success" 
                                 disabled={canPurchase()} 
                                 onClick={handleConfirmSelection}
+                                href="/ocasionalservicesconf"
                             > 
                                 <FontAwesomeIcon icon={faCheck} /> Confirm Selection
                             </Button>
