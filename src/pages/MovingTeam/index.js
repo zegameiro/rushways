@@ -3,7 +3,7 @@ import React from 'react';
 import './index.css'
 import '../../Components/ServicesBackButton'
 import ServicesBackButton from '../../Components/ServicesBackButton';
-import Navbar from "../../Components/Navbar";
+import NavbarRush from "../../Components/Navbar";
 import Footer from "../../Components/Footer";
 import MovingServices_1 from '../../images/MovingTeam/MovingTeam_1.jpg';
 import MovingServices_2 from '../../images/MovingTeam/MovingTeam_2.jpg';
@@ -25,7 +25,7 @@ const MovingTeam = () => {
 
     return (
         <>
-            <Navbar />
+            <NavbarRush />
             <div className='container moving-services-top-bar'>
                 <ServicesBackButton />
                 <div>

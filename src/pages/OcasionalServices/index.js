@@ -7,7 +7,7 @@ import { Row, Col, Button, Container, ButtonGroup } from "react-bootstrap";
 import { faArrowLeft, faMinus, faPlus, faCheck, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
 import vehicles from "./vehicles.js";
-import Navbar from "../../Components/Navbar";
+import NavbarRush from "../../Components/Navbar";
 import Footer from "../../Components/Footer";
 import "./index.css"
 
@@ -138,7 +138,7 @@ const OcasionalServices = () => {
 
     return (
         <>
-            <Navbar />
+            <NavbarRush />
             <div className="ocasionalservices">
                 <Row>
                     <Col sm={2}>

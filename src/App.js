@@ -4,9 +4,11 @@ import { Route, Routes } from 'react-router-dom';
 
 import OcasionalServices from './pages/OcasionalServices';
 import OcasionalServicesConf from './pages/OcasionalServicesConf';
+import OcasionalServicesDif from './pages/OcasionalServicesDif';
 import Homepage from './pages/Homepage';
 import MovingTeam from './pages/MovingTeam';
 import MovingServices from './pages/MovingServices';
+import Services from './pages/Services';
 
 const App = () => {
 
@@ -14,6 +16,8 @@ const App = () => {
         <div className="App">
             <Routes>
                 <Route path="/" element={ <Homepage /> } />
+                <Route path="/services" element={ <Services />} />
+                <Route path="/ocasionalservicesdif" element={ <OcasionalServicesDif />} />
                 <Route path="/ocasionalservices" element={ <OcasionalServices />} />
                 <Route path="/ocasionalservicesconf" element={ <OcasionalServicesConf />} />
                 <Route path="/movingteam" element={ <MovingTeam />} />
