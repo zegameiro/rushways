@@ -159,8 +159,7 @@ const OcasionalServices = () => {
                 <br />
                 <div className="image-ocasional">
                     <br />
-                    <br />
-                    <br /> 
+
                     <h3>Welcome to our car rental page! </h3>
                     <br />
                     <div style={{height:"500px",width:"500px",margin:"auto"}}>
