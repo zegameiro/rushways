@@ -1,6 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import { useSearchParams } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Row, Col, Button, Container, ButtonGroup } from "react-bootstrap";
@@ -17,7 +16,6 @@ const OcasionalServices = () => {
 
     const [page, setPage] = useState(1);
     const [selectedVehicles, setSelectedVehicles] = useState({});
-    const [searchParams, setSearchParams] = useSearchParams();
 
     const vehiclesPerPage = 5;
     const lastVehicleIndex = page * vehiclesPerPage;
@@ -79,11 +77,8 @@ const OcasionalServices = () => {
     }
 
     const handleConfirmSelection = () => {
-        setSearchParams({ selectedVehicles: JSON.stringify(selectedVehicles)});
-        setPage(1);
-        setSelectedVehicles({});
-        console.clear();
-        window.location.href = "/ocasionalservicesconf";
+        const selectedVehiclesQuantities = getSelectedVehicles().vehicleQuantities;
+        localStorage.setItem('selectedVehiclesQuantities', JSON.stringify(selectedVehiclesQuantities));
     };
 
 
@@ -209,6 +204,7 @@ const OcasionalServices = () => {
                                 variant="outline-success" 
                                 disabled={canPurchase()} 
                                 onClick={handleConfirmSelection}
+                                href="/ocasionalservicesconf"
                             > 
                                 <FontAwesomeIcon icon={faCheck} /> Confirm Selection
                             </Button>
