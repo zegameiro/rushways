@@ -39,14 +39,16 @@ const OcasionalServicesDif = () => {
                         </a>
                     </Col>
                     <Col>
-                        <div className="article-card">
-                            <div className="content">
-                                <p class="title">
-                                    <h2>For transportation of goods</h2>
-                                </p>
+                        <a href="/ocasionalservicesgoods">
+                            <div className="article-card">
+                                <div className="content">
+                                    <p class="title">
+                                        <h2>For transportation of goods</h2>
+                                    </p>
+                                </div>
+                                <img src={goods} alt="article-cover" />
                             </div>
-                            <img src={goods} alt="article-cover" />
-                        </div>
+                        </a>
                     </Col>
                 </Row>
             </div>

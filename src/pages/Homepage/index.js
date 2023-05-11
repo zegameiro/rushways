@@ -52,6 +52,9 @@ const Homepage = () => {
                     <img src={brandImage} alt="brand" className="image3"></img>
                 </div>
             </div>
+            <br />
+            <br />
+            <br />
             <Footer />
         </>
     );

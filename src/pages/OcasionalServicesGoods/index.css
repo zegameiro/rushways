@@ -1,0 +1,44 @@
+.ocasionalservices {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    align-items: center;
+}
+
+.image-ocasional-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.image-ocasional {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("../../images/OcasionalServices/city2.jpg");
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.button-page-number {
+    background-color: white;
+    color: orangered;
+    border-color: orangered;
+}
+
+.button-page-number:hover {
+    background-color: orangered;
+    color: white;
+}
+
+.button-page-number:active {
+    background-color: orangered !important;
+    color: white !important;
+}
+
+.vehicle-information h5 {
+    color: black !important;
+}

@@ -15,6 +15,8 @@ import MovingServiceNoTeam from './pages/MovingServicesNoTeam';
 import MovingServicesNoTeamConf from './pages/MovingServicesNoTeamConf';
 import Services from './pages/Services';
 import AboutUs from './pages/AboutUs';
+import OcasionalServicesGoods from './pages/OcasionalServicesGoods';
+import OcasionalServicesConfGoods from './pages/OcasionalServicesConfGoods';
 
 const App = () => {
 
@@ -25,7 +27,9 @@ const App = () => {
                 <Route path="/services" element={ <Services />} />
                 <Route path="/ocasionalservicesdif" element={ <OcasionalServicesDif />} />
                 <Route path="/ocasionalservices" element={ <OcasionalServices />} />
+                <Route path="/ocasionalservicesgoods" element={ <OcasionalServicesGoods />} />
                 <Route path="/ocasionalservicesconf" element={ <OcasionalServicesConf />} />
+                <Route path="/ocasionalservicesconfgoods" element={ <OcasionalServicesConfGoods />} />
                 <Route path="/longtermcontracts" element={ <LongTermContracts /> } />
                 <Route path="/longtermgoods" element={ <LongTermGoods /> } />
                 <Route path="/longtermgoodsconf" element={ <LongTermGoodsConf /> } />
