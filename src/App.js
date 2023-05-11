@@ -5,6 +5,8 @@ import { Route, Routes } from 'react-router-dom';
 import LongTermContracts from './pages/LongTermContracts';
 import LongTermGoods from './pages/LongTermGoods';
 import LongTermGoodsConf from './pages/LongTermGoodsConf';
+import LongTermContractsPeople from './pages/LongTermContractsPeople';
+import LongTermContractsPeopleConf from './pages/LongTermContractsPeopleConf';
 import OcasionalServices from './pages/OcasionalServices';
 import OcasionalServicesConf from './pages/OcasionalServicesConf';
 import OcasionalServicesDif from './pages/OcasionalServicesDif';
@@ -30,6 +32,8 @@ const App = () => {
                 <Route path="/ocasionalservicesgoods" element={ <OcasionalServicesGoods />} />
                 <Route path="/ocasionalservicesconf" element={ <OcasionalServicesConf />} />
                 <Route path="/ocasionalservicesconfgoods" element={ <OcasionalServicesConfGoods />} />
+                <Route path="/longtermcontractspeople" element={ <LongTermContractsPeople />} />
+                <Route path="/longtermcontractspeopleconf" element={ <LongTermContractsPeopleConf />} />
                 <Route path="/longtermcontracts" element={ <LongTermContracts /> } />
                 <Route path="/longtermgoods" element={ <LongTermGoods /> } />
                 <Route path="/longtermgoodsconf" element={ <LongTermGoodsConf /> } />

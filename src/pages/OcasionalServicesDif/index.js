@@ -25,7 +25,7 @@ const OcasionalServicesDif = () => {
                 <br />
                 <h3>Occasional transportation services, also known as on-demand or ad-hoc transportation services, are becoming increasingly popular in today's fast-paced world. These services provide flexible and convenient transportation options to people who need to travel on short notice or for one-time events.</h3>
                 <br />
-                <Row style={{paddingLeft:"200px"}}>
+                <Row style={{paddingLeft:"300px"}}>
                     <Col>
                         <a href="/ocasionalservices">
                             <div className="article-card">
