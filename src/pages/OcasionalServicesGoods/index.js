@@ -12,7 +12,7 @@ import ServicesBackButton from "../../Components/ServicesBackButton/index.js";
 import "./index.css"
 
 
-const OcasionalServices = () => {
+const OcasionalServicesGoods = () => {
 
     const [page, setPage] = useState(1);
     const [selectedVehicles, setSelectedVehicles] = useState({});
@@ -89,19 +89,20 @@ const OcasionalServices = () => {
     };
 
     const getVehicleInfor = (vehicle) => {
-        const { id, availableSeats, vehicleName, vehicleType, priceOneDay, isDriver, image } = vehicle;
+        const { id, availableSeats, Capacity, vehicleName, vehicleType, priceOneDay, isDriver, image } = vehicle;
         
         return (
             <Row>
                 {id % 2 === 0 ? (
                     <>
                         <Col sm={6}>
-                            <img src={image} alt={vehicleName} />
+                            <img src={image} alt={vehicleName} style={{height:400}}/>
                         </Col>
                         <Col sm={6} style={{paddingTop:"120px"}} className="vehicle-information">
                             <h4> <b>{vehicleName}</b> </h4>
                             <h5> <b>Price:</b> {getPrice(priceOneDay)}</h5>
                             <h5> <b>Available Seats:</b> {availableSeats}</h5>
+                            <h5> <b>Capacity:</b> {Capacity}</h5>
                             <h5> <b>Vehicle Type:</b> {vehicleType}</h5>
                             <h5> <b>Driver:</b> {getIsDriver(isDriver)}</h5>
                             <div>
@@ -117,6 +118,7 @@ const OcasionalServices = () => {
                             <h4> <b>{vehicleName}</b> </h4>
                             <h5> <b>Price:</b> {getPrice(priceOneDay)}</h5>
                             <h5> <b>Available Seats:</b> {availableSeats}</h5>
+                            <h5> <b>Capacity:</b> {Capacity}</h5>
                             <h5> <b>Vehicle Type:</b> {vehicleType}</h5>
                             <h5> <b>Driver:</b> {getIsDriver(isDriver)}</h5>
                             <Button variant="light" onClick={() => decrementValue(id)}> <FontAwesomeIcon icon={faMinus} /> </Button>
@@ -148,7 +150,7 @@ const OcasionalServices = () => {
                 </Row>
                 <Row>
                     <Col sm={5}>
-                        <h2>For transportation of people</h2>
+                        <h2>For transportation of Goods</h2>
                     </Col>
                 </Row>
                 <br />
@@ -211,7 +213,7 @@ const OcasionalServices = () => {
                                 variant="outline-success" 
                                 disabled={canPurchase()} 
                                 onClick={handleConfirmSelection}
-                                href="/ocasionalservicesconf"
+                                href="/ocasionalservicesconfgoods"
                             > 
                                 <FontAwesomeIcon icon={faCheck} /> Confirm Selection
                             </Button>
@@ -224,4 +226,4 @@ const OcasionalServices = () => {
     );
 }
 
-export default OcasionalServices;
+export default OcasionalServicesGoods;
