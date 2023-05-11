@@ -49,7 +49,9 @@ const Services = () => {
                             <h1> <FontAwesomeIcon icon={faHandshake} /> </h1>
                             <h4>Long Term Contracts</h4>
                             <p>This service is designed to cater to businesses, or institutions seeking extended and frequent transportation solutions. Our services are especially suitable for those interested in long-term rental options.</p>
-                            <button className="buttonServices">Read More</button>
+                            <a href="/longtermcontracts">
+                                <button className="buttonServices">Read More</button>
+                            </a>
                         </div>
                     </div>
                 </Col> 
