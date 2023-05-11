@@ -1,5 +1,5 @@
 import React from "react";
-import {  Row, Col } from "react-bootstrap";
+import {  Row, Col, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faYoutube, faLinkedin, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faCopyright } from "@fortawesome/free-regular-svg-icons";
@@ -26,8 +26,8 @@ const Footer = () => {
 
     return (
         <footer className="footer">
-                <div className="information">
-                    <div style={{paddingBottom:"40px"}}>
+                <div className="information" style={{paddingBottom:"40px"}}>
+                    <div style={{paddingBottom:"40px", paddingTop:"40px"}}>
                         <h2>Our Impact Goals</h2>
                     </div>
                         <Row style={{paddingBottom:"30px", paddingLeft:"20px", paddingRight:"100px"}} >
@@ -52,6 +52,10 @@ const Footer = () => {
                                         <FontAwesomeIcon icon={faInstagram} /> 
                                     </div>
                                 </div>
+                                <br />
+                                <Button variant="outline-light" href="/aboutus">About Us</Button>
+                                <br />
+                                <br />
                             </Col>
                             <Col style={{alignItems:"center", alignContent:"center", textAlign:"center"}}>
                                 <img src={ logoWhite } width="300px" style={{paddingBottom: "40px"}}/>

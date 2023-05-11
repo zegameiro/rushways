@@ -1,26 +1,75 @@
 import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUserNinja, faUserAstronaut, faUserInjured, faSmile } from "@fortawesome/free-solid-svg-icons";
 
 import NavbarRush from '../../Components/Navbar';
 import Footer from '../../Components/Footer';
 import '../AboutUs/index.css'
 
+
 const AboutUs = () => {
 
+    const ua_image = require("../../images/AboutUs/ua.jpg")
 
     return (
         <>
             <NavbarRush />
-            <div style={{height:1000}}>
-                <div className="about_us">
-                    <h1 className="titulo">Who are we</h1>
-                    <h4 className="one">RushWays is your go-to destination for all your transportation rental needs. Our mission is<br></br> to make it easy and convenient for individuals and businesses alike to find and book the <br></br> perfect rental vehicle for their specific needs.<p className="p1"></p>
+            <div>
+                <h1 className="text-center">About Us</h1>
+                <br />
+                <Container>
+                    <div>
+                        <h3>RushWays is your go-to destination for all your transportation rental needs. Our mission is to make it easy and convenient for individuals and businesses alike to find and book the perfect rental vehicle for their specific needs.</h3>
+                        <br />
+                        <h3>
+At RushWays, we understand that transportation can be a crucial element in achieving your goals, whether it's getting your employees to a company retreat or moving your belongings to a new home. That's why we've created an online platform that allows you to quickly and easily browse through our wide selection of rental vehicles, compare prices and availability, and make reservations all in one place.</h3>
+                    </div>
+                    <br />
+                    <br />
+                    <h1 className="text-center">
+                        Our Team
+                    </h1>
+                    <br />
+                    <Row className="text-center">
+                        <Col sm={4}>
+                            <h2> <b> <FontAwesomeIcon icon={faUserNinja} /> João Carlos </b> </h2>
+                            <br />
+                            <h3> <b>Nmec:</b> 110555 </h3>
+                            <h3> <b>Course:</b> Computer Engineering </h3>
+                        </Col>
+                        <Col sm={4}>
+                            <h2> <b> <FontAwesomeIcon icon={faUserInjured} /> José Gameiro </b> </h2>
+                            <br />
+                            <h3> <b>Nmec:</b> 108840 </h3>
+                            <h3> <b>Course:</b> Computer Engineering </h3>
+                        </Col>
+                        <Col sm={4}>
+                            <h2> <b> <FontAwesomeIcon icon={faUserAstronaut} /> Ricardo Almeida </b> </h2>
+                            <br />
+                            <h3> <b>Nmec:</b> 110056 </h3>
+                            <h3> <b>Course:</b> Computer Engineering </h3>
+                        </Col>
+                    </Row>
+                    <br />
+                    <br />
+                    <div>
+                        <h3>This website was developed as part of our Computer-Human Interaction (IHC) class, where our final project involved creating an application/website for evaluation purposes. Please note that the vehicles featured on this page are fictional, and it is not possible to rent actual cars. Additionally, the company RushWays does not exist; it was a concept we devised for the project.</h3>
+                    </div>
+                    <br />
+                    <br />
+                    <div>
+                        <h3 className="text-center"> <FontAwesomeIcon icon={faSmile} /> <b>Thank you for visiting our website! </b></h3>
+                        <br />
+                        <br />
+                        <img src={ua_image} alt="ua" style={{ height: "100%", width: "100%" }} />
+                        <br />
+                        <br />
 
-                                    At RushWays, we understand that transportation can be a crucial element in achieving your <br></br> goals, whether it's getting your employees to a company retreat or moving your belongings<br></br> to a new home. That's why we've created an online platform that allows you to quickly and <br></br> easily browse through our wide selection of rental vehicles, compare prices and availability,<br></br> and make reservations all in one place. <p className="p2"></p>
+                    </div>
+                </Container>
 
-                                    We take pride in our commitment to customer satisfaction, and we strive to provide <br></br> the highest level of service to each and every one of our customers. Our team is dedicated to <br></br> ensuring that your rental experience with us is seamless and stress-free, from the <br></br> moment you start your search to the moment you return your rental.<p className="p3"></p>
-
-                                    We believe that transportation should never be a barrier to achieving your goals. That's <br></br>why we're here to provide you with the perfect rental solution for any occasion, so you can <br></br> focus on what really matters. Thank you for choosing RushWays as your trusted rental partner.</h4>
-                </div>
             </div>
             <Footer />
         </>
