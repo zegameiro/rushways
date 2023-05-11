@@ -3,6 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route, Routes } from 'react-router-dom';
 
 import LongTermContracts from './pages/LongTermContracts';
+import LongTermGoods from './pages/LongTermGoods';
+import LongTermGoodsConf from './pages/LongTermGoodsConf';
 import OcasionalServices from './pages/OcasionalServices';
 import OcasionalServicesConf from './pages/OcasionalServicesConf';
 import OcasionalServicesDif from './pages/OcasionalServicesDif';
@@ -25,6 +27,8 @@ const App = () => {
                 <Route path="/ocasionalservices" element={ <OcasionalServices />} />
                 <Route path="/ocasionalservicesconf" element={ <OcasionalServicesConf />} />
                 <Route path="/longtermcontracts" element={ <LongTermContracts /> } />
+                <Route path="/longtermgoods" element={ <LongTermGoods /> } />
+                <Route path="/longtermgoodsconf" element={ <LongTermGoodsConf /> } />
                 <Route path="/movingteam" element={ <MovingTeam />} />
                 <Route path="/movingservices" element={ <MovingServices />} />
                 <Route path="/movingservicesnoteam" element={ <MovingServiceNoTeam />} />

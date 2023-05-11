@@ -20,21 +20,23 @@ const LongTermContracts = () => {
                 <ServicesBackButton />
             </a>
             <br />
-            <div className='mb-4'style={{textAlign:"center"}}>
+            <div className='mb-4' style={{ textAlign: "center" }}>
                 <h1>Long Term Contracts</h1>
                 <br />
                 <h3 className='container'>Long-term transportation services, also known as contract transportation services, are deals where transportation providers offer services to clients for an extended period. These services are commonly used by businesses, institutions, and organizations to transport goods, materials, and people regularly.</h3>
                 <br />
-                <Row style={{paddingLeft:"130px"}}>
+                <Row style={{ paddingLeft: "130px" }}>
                     <Col>
-                        <div className="article-card">
-                            <div className="content">
-                                <p class="title">
-                                    <h2>For transportation of goods</h2>
-                                </p>
+                        <a href="/longtermgoods">
+                            <div className="article-card">
+                                <div className="content">
+                                    <p class="title">
+                                        <h2>For transportation of goods</h2>
+                                    </p>
+                                </div>
+                                <img src={goods} alt="article-cover" />
                             </div>
-                            <img src={goods} alt="article-cover" />
-                        </div>
+                        </a>
                     </Col>
                     <Col>
                         <a href="">
