@@ -143,7 +143,7 @@ const LongTermGoodsConf = () => {
                 <br />
                 <Row className="justify-content-center">
                     <Col sm={2} className="text-center">
-                        <Button variant="outline-danger" href="/movingservicesnoteam" onClick={clearLocalStorage}> <b> <FontAwesomeIcon icon={faCircleXmark}/> Cancel</b></Button>
+                        <Button variant="outline-danger" href="/longtermgoods" onClick={clearLocalStorage}> <b> <FontAwesomeIcon icon={faCircleXmark}/> Cancel</b></Button>
                     </Col>
                     <Col sm={2} className="text-center">
                         <Button variant="outline-success" onClick={handleShow}> <b> <FontAwesomeIcon icon={faCircleCheck} /> Confirm</b></Button>

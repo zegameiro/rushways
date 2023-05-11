@@ -1,7 +1,7 @@
 const vehicles_goods = [
     {
         id: 1,
-        availableSeats: 22,
+        availableSeats: 2,
         vehicleName: "Ford Transit Courier",
         vehicleType: "Diesel",
         driver: "Optional",
@@ -28,7 +28,7 @@ const vehicles_goods = [
     },
     {
         id: 4,
-        availableSeats: 3,
+        availableSeats: 2,
         vehicleName: "Ford NOVO Ranger Cabina Sencilla",
         vehicleType: "Diesel",
         driver: "Optional",
