@@ -182,21 +182,21 @@ const OcasionalServices = () => {
                             <hr />
                         </div>
                     ))}
+                    <Row className="text-center">
                         <ul className="pagination">
                             {Array(Math.ceil(vehicles.length / vehiclesPerPage))
                                 .fill()
                                 .map((_, i) => (
                                     <li key={i} className={`page-item ${i + 1 === page ? "active" : null}`} >
-                                        <ButtonGroup aria-label="Toolbar with button groups">
-                                            <ButtonGroup className="me-2" aria-label="First group">
-                                                <Button variant="outline" className="button-page-number" onClick={() => setPage(i + 1)} >
-                                                    {i + 1}
-                                                </Button> 
-                                            </ButtonGroup>{' '}
+                                        <ButtonGroup aria-label="Basic example">
+                                            <Button variant="outline" className="button-page-number" onClick={() => setPage(i + 1)} >
+                                                {i + 1}
+                                            </Button> 
                                         </ButtonGroup>
                                     </li>
                             ))}
                         </ul>
+                    </Row>                
                 </div>
 
                 <br />
