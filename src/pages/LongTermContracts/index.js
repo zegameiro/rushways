@@ -25,7 +25,7 @@ const LongTermContracts = () => {
                 <br />
                 <h3 className='container'>Long-term transportation services, also known as contract transportation services, are deals where transportation providers offer services to clients for an extended period. These services are commonly used by businesses, institutions, and organizations to transport goods, materials, and people regularly.</h3>
                 <br />
-                <Row style={{ paddingLeft: "300px" }}>
+                <Row style={{display: "inline-flex"}}>
                     <Col>
                         <a href="/longtermgoods">
                             <div className="article-card">
