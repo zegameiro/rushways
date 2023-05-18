@@ -102,7 +102,7 @@ const OcasionalServicesGoods = () => {
                             <h4> <b>{vehicleName}</b> </h4>
                             <h5> <b>Price:</b> {getPrice(priceOneDay)}</h5>
                             <h5> <b>Available Seats:</b> {availableSeats}</h5>
-                            <h5> <b>Capacity:</b> {Capacity} kg</h5>
+                            <h5> <b>Capacity:</b> {Capacity}</h5>
                             <h5> <b>Vehicle Type:</b> {vehicleType}</h5>
                             <h5> <b>Driver:</b> {getIsDriver(isDriver)}</h5>
                             <div>
@@ -118,7 +118,7 @@ const OcasionalServicesGoods = () => {
                             <h4> <b>{vehicleName}</b> </h4>
                             <h5> <b>Price:</b> {getPrice(priceOneDay)}</h5>
                             <h5> <b>Available Seats:</b> {availableSeats}</h5>
-                            <h5> <b>Capacity:</b> {Capacity} kg</h5>
+                            <h5> <b>Capacity:</b> {Capacity}</h5>
                             <h5> <b>Vehicle Type:</b> {vehicleType}</h5>
                             <h5> <b>Driver:</b> {getIsDriver(isDriver)}</h5>
                             <Button variant="light" onClick={() => decrementValue(id)}> <FontAwesomeIcon icon={faMinus} /> </Button>
