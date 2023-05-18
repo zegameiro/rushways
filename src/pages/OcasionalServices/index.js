@@ -102,7 +102,7 @@ const OcasionalServices = () => {
                             <h4> <b>{vehicleName}</b> </h4>
                             <h5> <b>Price:</b> {getPrice(priceOneDay)}</h5>
                             <h5> <b>Available Seats:</b> {availableSeats}</h5>
-                            <h5> <b>Vehicle Type:</b> {vehicleType}</h5>
+                            <h5> <b>Engine Type:</b> {vehicleType}</h5>
                             <h5> <b>Driver:</b> {getIsDriver(isDriver)}</h5>
                             <div>
                                 <Button variant="light" onClick={() => decrementValue(id)}> <FontAwesomeIcon icon={faMinus} /> </Button>
@@ -117,7 +117,7 @@ const OcasionalServices = () => {
                             <h4> <b>{vehicleName}</b> </h4>
                             <h5> <b>Price:</b> {getPrice(priceOneDay)}</h5>
                             <h5> <b>Available Seats:</b> {availableSeats}</h5>
-                            <h5> <b>Vehicle Type:</b> {vehicleType}</h5>
+                            <h5> <b>Engine Type:</b> {vehicleType}</h5>
                             <h5> <b>Driver:</b> {getIsDriver(isDriver)}</h5>
                             <Button variant="light" onClick={() => decrementValue(id)}> <FontAwesomeIcon icon={faMinus} /> </Button>
                             <span style={{padding:"10px"}}> {selectedVehicles[id] || 0} </span>
@@ -142,10 +142,10 @@ const OcasionalServices = () => {
                             <ServicesBackButton />
                         </a>
                     </Col>
-                    <Col sm={7} style={{paddingBottom:"20px"}}>
-                        <h4>Ocasional Services</h4>
-                    </Col>
+                    <h4>Ocasional Services</h4>
                 </Row>
+                <br />
+                <br />
                 <Row>
                     <Col sm={5}>
                         <h2>For transportation of people</h2>
@@ -172,7 +172,9 @@ const OcasionalServices = () => {
                 </div>
 
                 <br />
-                <h3>Vehicles available</h3>
+                <div className="text-center">
+                    <h3>Vehicles available</h3>
+                </div>
                 <br />
 
                 <div>
@@ -182,14 +184,14 @@ const OcasionalServices = () => {
                             <hr />
                         </div>
                     ))}
-                    <Row className="text-center">
+                    <Row className="text-center" style={{display:"grid", justifyContent:"center"}}>
                         <ul className="pagination">
                             {Array(Math.ceil(vehicles.length / vehiclesPerPage))
                                 .fill()
                                 .map((_, i) => (
                                     <li key={i} className={`page-item ${i + 1 === page ? "active" : null}`} >
-                                        <ButtonGroup aria-label="Basic example">
-                                            <Button variant="outline" className="button-page-number" onClick={() => setPage(i + 1)} >
+                                        <ButtonGroup aria-label="Basic example" style={{padding:"3px"}}>
+                                            <Button variant="outline" className="button-page-number" onClick={() => setPage(i + 1)} style={{fontSize:"20px", width:"40px"}}>
                                                 {i + 1}
                                             </Button> 
                                         </ButtonGroup>
