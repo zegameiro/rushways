@@ -5,7 +5,7 @@ import Footer from "../../Components/Footer";
 import ServicesBackButton from "../../Components/ServicesBackButton";
 
 import "./index.css";
-import { Col, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 
 const OcasionalServicesDif = () => {
 
@@ -21,11 +21,13 @@ const OcasionalServicesDif = () => {
             </a>
             <br />
             <div style={{textAlign:"center"}}>
-                <h1>Ocasional Services</h1>
-                <br />
-                <h3>Occasional transportation services, also known as on-demand or ad-hoc transportation services, are becoming increasingly popular in today's fast-paced world. These services provide flexible and convenient transportation options to people who need to travel on short notice or for one-time events.</h3>
-                <br />
-                <Row style={{paddingLeft:"300px"}}>
+                <Container>
+                    <h1>Ocasional Services</h1>
+                    <br />
+                    <h3>Occasional transportation services, also known as on-demand or ad-hoc transportation services, are becoming increasingly popular in today's fast-paced world. These services provide flexible and convenient transportation options to people who need to travel on short notice or for one-time events.</h3>
+                    <br />
+                </Container>
+                <Row style={{display:"inline-flex"}}>
                     <Col>
                         <a href="/ocasionalservices">
                             <div className="article-card">
