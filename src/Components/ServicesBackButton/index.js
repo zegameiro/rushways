@@ -10,9 +10,7 @@ const ServicesBackButton = () => {
 
     return (
         <div>
-            <a href='/services'>
-                <Button className="btn btn-secondary services-back-button"><b><FontAwesomeIcon icon={faArrowLeft} /> Services </b></Button>
-            </a>
+            <Button className="btn btn-secondary services-back-button"><b><FontAwesomeIcon icon={faArrowLeft} /> Go Back </b></Button>
         </div>
     );
 }

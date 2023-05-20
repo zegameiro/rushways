@@ -15,7 +15,9 @@ const MovingServices = () => {
         <>
             <NavbarRush />
             <div className='container moving-services-top-bar'>
-                <ServicesBackButton />
+                <a href='/'>
+                    <ServicesBackButton />
+                </a>
                 <div>
                     <h1 className="moving-services-header">Moving Services</h1>
                 </div>

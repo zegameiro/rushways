@@ -17,7 +17,7 @@ const AboutUs = () => {
         <>
             <NavbarRush />
             <div>
-                <h1 className="text-center">About Us</h1>
+                <h1 className="text-center"> <b>About Us</b> </h1>
                 <br />
                 <Container>
                     <div>
@@ -28,34 +28,47 @@ At RushWays, we understand that transportation can be a crucial element in achie
                     </div>
                     <br />
                     <br />
-                    <h1 className="text-center">
-                        Our Team
-                    </h1>
-                    <br />
-                    <Row className="text-center">
-                        <Col sm={4}>
-                            <h2> <b> <FontAwesomeIcon icon={faUserNinja} /> João Carlos </b> </h2>
-                            <br />
-                            <h3> <b>Nmec:</b> 110555 </h3>
-                            <h3> <b>Course:</b> Computer Engineering </h3>
-                        </Col>
-                        <Col sm={4}>
-                            <h2> <b> <FontAwesomeIcon icon={faUserInjured} /> José Gameiro </b> </h2>
-                            <br />
-                            <h3> <b>Nmec:</b> 108840 </h3>
-                            <h3> <b>Course:</b> Computer Engineering </h3>
-                        </Col>
-                        <Col sm={4}>
-                            <h2> <b> <FontAwesomeIcon icon={faUserAstronaut} /> Ricardo Almeida </b> </h2>
-                            <br />
-                            <h3> <b>Nmec:</b> 110056 </h3>
-                            <h3> <b>Course:</b> Computer Engineering </h3>
-                        </Col>
-                    </Row>
+
+                    <hr />
+
                     <br />
                     <br />
-                    <div>
-                        <h3>This website was developed as part of our Computer-Human Interaction (IHC) class, where our final project involved creating an application/website for evaluation purposes. Please note that the vehicles featured on this page are fictional, and it is not possible to rent actual cars. Additionally, the company RushWays does not exist; it was a concept we devised for the project.</h3>
+                    <div className="text-center">
+                        <h1> <b>Our Team</b> </h1>
+                        <br />
+                        <Row>
+                            <Col sm={4}>
+                                <h2> <b> <FontAwesomeIcon icon={faUserNinja} /> João Carlos </b> </h2>
+                                <br />
+                                <h3> <b>Nmec:</b> 110555 </h3>
+                                <h3> <b>Course:</b> Informatics Engineering  </h3>
+                            </Col>
+                            <Col sm={4}>
+                                <h2> <b> <FontAwesomeIcon icon={faUserInjured} /> José Gameiro </b> </h2>
+                                <br />
+                                <h3> <b>Nmec:</b> 108840 </h3>
+                                <h3> <b>Course:</b> Informatics Engineering  </h3>
+                            </Col>
+                            <Col sm={4}>
+                                <h2> <b> <FontAwesomeIcon icon={faUserAstronaut} /> Ricardo Almeida </b> </h2>
+                                <br />
+                                <h3> <b>Nmec:</b> 110056 </h3>
+                                <h3> <b>Course:</b> Informatics Engineering  </h3>
+                            </Col>
+                        </Row>
+                    </div>
+
+                    <br />
+                    <br />
+
+                    <hr />
+
+                    <br />
+                    <br />
+
+                    <div className="text-center">
+                        <h1> <b>Additional Information</b> </h1>
+                        <h3>This website was developed as part of our Human-Computer Interaction (HCI) class, where our final project involved creating an application/website for evaluation purposes. Please note that the vehicles featured on this website are fictional, and it is not possible to rent actual cars. Additionally, the company RushWays does not exist, it was a concept we created for our project.</h3>
                     </div>
                     <br />
                     <br />
@@ -71,6 +84,7 @@ At RushWays, we understand that transportation can be a crucial element in achie
                 </Container>
 
             </div>
+            <br />
             <Footer />
         </>
     );

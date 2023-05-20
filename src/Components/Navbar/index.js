@@ -46,8 +46,6 @@ const NavbarRush = () => {
                       <NavDropdown.Item href="/ocasionalservicesdif">Ocasional Services</NavDropdown.Item>
                       <NavDropdown.Item href="/longtermcontracts">Long Term Contracts</NavDropdown.Item>
                       <NavDropdown.Item href="/movingservices">Moving Services</NavDropdown.Item>
-                      <NavDropdown.Divider />
-                      <NavDropdown.Item href="/services">Services</NavDropdown.Item>
                     </NavDropdown>
                 </Nav>
                 <Nav className="justify-content-end flex-grow-1 pe-3">

@@ -67,7 +67,7 @@ const OcasionalServicesConf = () => {
                                         <h5> <b>Price:</b> {getPrice(vehicle.priceOneDay)}</h5>
                                         <h5> <b>Available Seats:</b> {vehicle.availableSeats}</h5>
                                         <h5> <b>Capacity:</b> {vehicle.Capacity}</h5>
-                                        <h5> <b>Vehicle Type:</b> {vehicle.vehicleType}</h5>
+                                        <h5> <b>Engine Type:</b> {vehicle.vehicleType}</h5>
                                         <h5> <b>Driver:</b> {getIsDriver(vehicle.isDriver)}</h5>
                                         <h5> <b>Number of vehicles choosen: {selectedVehiclesQuantities[vehicleId]}</b> </h5>
                                     </Col>
@@ -104,7 +104,7 @@ const OcasionalServicesConf = () => {
                     })}
                 </div>
                 <br />
-                <h3> <b>Estimated Total Price:</b> {totalPrice} $</h3>
+                <h3> <b>Estimated Total Price:</b> {totalPrice} $/day</h3>
                 <br />
                 <h3> <b>Personal Information:</b> </h3>
                 <br />

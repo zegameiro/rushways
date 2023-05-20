@@ -1,5 +1,5 @@
 import React from "react";
-import {  Row, Col, Button } from "react-bootstrap";
+import {  Row, Col, Button, Container } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faYoutube, faLinkedin, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faCopyright } from "@fortawesome/free-regular-svg-icons";
@@ -26,48 +26,50 @@ const Footer = () => {
 
     return (
         <footer className="footer">
+            <Container>
                 <div className="information" style={{paddingBottom:"40px"}}>
                     <div style={{paddingBottom:"40px", paddingTop:"40px"}}>
                         <h2>Our Impact Goals</h2>
                     </div>
-                        <Row style={{paddingBottom:"30px", paddingLeft:"20px", paddingRight:"100px"}} >
-                            {information.map((info, index) => (
-                                <>
-                                    <Col sm={4} key={index}>
-                                        <h5>{info.title}</h5>
-                                        <h6>{info.description}</h6>
-                                    </Col>
-                                </>
-                            ))}
-                        </Row>
-                        <Row>
-                            <Col>
-                                <div style={{paddingTop:"20px"}}>
-                                    <h5>Follow us on social media</h5>
-                                    <div className="icons" >
-                                        <FontAwesomeIcon icon={faFacebook} />
-                                        <FontAwesomeIcon icon={faTwitter} />
-                                        <FontAwesomeIcon icon={faYoutube} />
-                                        <FontAwesomeIcon icon={faLinkedin} />
-                                        <FontAwesomeIcon icon={faInstagram} /> 
-                                    </div>
+                    <Row style={{paddingBottom:"30px", paddingLeft:"20px", paddingRight:"100px"}} >
+                        {information.map((info, index) => (
+                            <>
+                                <Col sm={4} key={index}>
+                                    <h4>{info.title}</h4>
+                                    <h5>{info.description}</h5>
+                                </Col>
+                            </>
+                        ))}
+                    </Row>
+                    <Row>
+                        <Col>
+                            <div style={{paddingTop:"20px"}}>
+                                <h4>Follow us on social media</h4>
+                                <div className="icons" >
+                                    <FontAwesomeIcon icon={faFacebook} />
+                                    <FontAwesomeIcon icon={faTwitter} />
+                                    <FontAwesomeIcon icon={faYoutube} />
+                                    <FontAwesomeIcon icon={faLinkedin} />
+                                    <FontAwesomeIcon icon={faInstagram} /> 
                                 </div>
-                                <br />
-                                <Button variant="outline-light" href="/aboutus">About Us</Button>
-                                <br />
-                                <br />
-                            </Col>
-                            <Col style={{alignItems:"center", alignContent:"center", textAlign:"center"}}>
-                                <img src={ logoWhite } width="300px" style={{paddingBottom: "40px"}}/>
-                                <p style={{color:"white"}}> <FontAwesomeIcon icon={faCopyright} /> Copy Right 2022/2023 RushWays UA</p>
-                            </Col>
-                            <Col style={{alignItems:"center", alignContent:"center", textAlign:"center"}}>
-                                <h5>Contact Us</h5>
-                                <h6>235645123</h6>
-                                <h6>rushways@ua.pt</h6>
-                            </Col>
-                        </Row>
+                            </div>
+                            <br />
+                            <Button variant="outline-light" href="/aboutus">About Us</Button>
+                            <br />
+                            <br />
+                        </Col>
+                        <Col style={{alignItems:"center", alignContent:"center", textAlign:"center"}}>
+                            <img src={ logoWhite } width="300px" style={{paddingBottom: "40px"}}/>
+                            <p style={{color:"white"}}> <FontAwesomeIcon icon={faCopyright} /> Copy Right 2022/2023 RushWays UA</p>
+                        </Col>
+                        <Col style={{alignItems:"center", alignContent:"center", textAlign:"center"}}>
+                            <h4>Contact Us</h4>
+                            <h5>235645123</h5>
+                            <h5>rushways@ua.pt</h5>
+                        </Col>
+                    </Row>
                 </div>
+            </Container>
         </footer>
     );
     

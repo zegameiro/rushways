@@ -15,7 +15,6 @@ import MovingTeam from './pages/MovingTeam';
 import MovingServices from './pages/MovingServices';
 import MovingServiceNoTeam from './pages/MovingServicesNoTeam';
 import MovingServicesNoTeamConf from './pages/MovingServicesNoTeamConf';
-import Services from './pages/Services';
 import AboutUs from './pages/AboutUs';
 import OcasionalServicesGoods from './pages/OcasionalServicesGoods';
 import OcasionalServicesConfGoods from './pages/OcasionalServicesConfGoods';
@@ -26,7 +25,6 @@ const App = () => {
         <div className="App">
             <Routes>
                 <Route path="/" element={ <Homepage /> } />
-                <Route path="/services" element={ <Services />} />
                 <Route path="/ocasionalservicesdif" element={ <OcasionalServicesDif />} />
                 <Route path="/ocasionalservices" element={ <OcasionalServices />} />
                 <Route path="/ocasionalservicesgoods" element={ <OcasionalServicesGoods />} />

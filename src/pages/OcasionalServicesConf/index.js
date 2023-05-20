@@ -103,7 +103,7 @@ const OcasionalServicesConf = () => {
                     })}
                 </div>
                 <br />
-                <h3> <b>Estimated Total Price:</b> {totalPrice} $</h3>
+                <h3> <b>Estimated Total Price:</b> {getPrice(totalPrice)}</h3>
                 <br />
                 <h3> <b>Personal Information:</b> </h3>
                 <br />

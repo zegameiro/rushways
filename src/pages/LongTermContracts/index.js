@@ -16,7 +16,7 @@ const LongTermContracts = () => {
         <div>
             <NavbarRush />
             <br />
-            <a href="/services">
+            <a href="/">
                 <ServicesBackButton />
             </a>
             <br />

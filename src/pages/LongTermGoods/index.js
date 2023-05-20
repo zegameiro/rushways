@@ -100,7 +100,7 @@ const LongTermGoods = () => {
                         <Col sm={6} style={{paddingTop:"120px", paddingLeft:"10px"}} className="vehicle-information text-center">
                             <h4> <b>{vehicleName}</b> </h4>
                             <h5> <b>Available Seats:</b> {availableSeats}</h5>
-                            <h5> <b>Vehicle Type:</b> {vehicleType}</h5>
+                            <h5> <b>Engine Type:</b> {vehicleType}</h5>
                             <h5> <b>Driver:</b> {getIsDriver(isDriver)}</h5>
                             <h5> <b>Capacity:</b> {getCapacity(capacity)}</h5>
                             <div>
@@ -115,7 +115,7 @@ const LongTermGoods = () => {
                         <Col sm={6} style={{paddingTop:"120px"}} className="vehicle-information text-center">
                             <h4> <b>{vehicleName}</b> </h4>
                             <h5> <b>Available Seats:</b> {availableSeats}</h5>
-                            <h5> <b>Vehicle Type:</b> {vehicleType}</h5>
+                            <h5> <b>Engine Type:</b> {vehicleType}</h5>
                             <h5> <b>Driver:</b> {getIsDriver(isDriver)}</h5>
                             <h5> <b>Capacity:</b> {getCapacity(capacity)}</h5>
                             <Button variant="light" onClick={() => decrementValue(id)}> <FontAwesomeIcon icon={faMinus} /> </Button>

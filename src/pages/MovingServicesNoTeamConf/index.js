@@ -61,7 +61,7 @@ const MovingServicesNoTeamConf = () => {
                                         <h4> <b>{vehicle.vehicleName}</b> </h4>
                                         <h5> <b>Price:</b> {getPrice(vehicle.priceOneDay)}</h5>
                                         <h5> <b>Available Seats:</b> {vehicle.availableSeats}</h5>
-                                        <h5> <b>Vehicle Type:</b> {vehicle.vehicleType}</h5>
+                                        <h5> <b>Engine Type:</b> {vehicle.vehicleType}</h5>
                                         <h5> <b>Number of vehicles choosen: {selectedVehiclesQuantities[vehicleId]}</b> </h5>
                                     </Col>
                                     <br />
@@ -71,7 +71,7 @@ const MovingServicesNoTeamConf = () => {
                     })}
                 </div>
                 <br />
-                <h3> <b>Estimated Total Price:</b> {totalPrice} $</h3>
+                <h3> <b>Estimated Total Price:</b> {getPrice(totalPrice)} </h3>
                 <br />
                 <h3> <b>Personal Information:</b> </h3>
                 <br />

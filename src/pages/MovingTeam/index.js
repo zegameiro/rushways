@@ -27,7 +27,9 @@ const MovingTeam = () => {
         <>
             <NavbarRush />
             <div className='container moving-services-top-bar'>
-                <ServicesBackButton />
+                <a href='/movingservices'>
+                    <ServicesBackButton />
+                </a>
                 <div>
                     <h1 className="moving-team-header">Moving Team</h1>
                 </div>
