@@ -14,3 +14,8 @@
     transform: translate(-50%, -50%);
     color: white;
 }
+
+.button-page-number:active {
+    background-color: orangered;
+    color: white !important;
+}

@@ -98,6 +98,7 @@ const LongTermContractsPeople = () => {
                             <h4> <b>{vehicleName}</b> </h4>
                             <h5> <b>Available Seats:</b> {availableSeats}</h5>
                             <h5> <b>Vehicle Type:</b> {vehicleType}</h5>
+                            <h5> <b>Driver:</b> {getIsDriver(isDriver)}</h5>
                             <div>
                                 <Button variant="light" onClick={() => decrementValue(id)}> <FontAwesomeIcon icon={faMinus} /> </Button>
                                 <span style={{padding:"10px"}}> {selectedVehicles[id] || 0} </span>
@@ -128,6 +129,7 @@ const LongTermContractsPeople = () => {
     return (
         <>
             <NavbarRush />
+            <br />
             <div className="ocasionalservices">
                 <Row>
                     <Col sm={2}>
@@ -135,9 +137,7 @@ const LongTermContractsPeople = () => {
                             <ServicesBackButton />
                         </a>
                     </Col>
-                    <Col sm={7} style={{paddingBottom:"20px"}}>
-                        <h4>Long Term Contracts</h4>
-                    </Col>
+                    <h4>Long Term Contracts</h4>
                 </Row>
                 <Row>
                     <Col sm={5}>
@@ -165,7 +165,9 @@ const LongTermContractsPeople = () => {
                 </div>
 
                 <br />
-                <h3>Vehicles available</h3>
+                <div className="text-center">
+                    <h3>Vehicles available</h3>
+                </div>    
                 <br />
 
                 <div>
@@ -175,21 +177,25 @@ const LongTermContractsPeople = () => {
                             <hr />
                         </div>
                     ))}
+                    <Row className="text-center" style={{display:"grid", justifyContent:"center"}}>
                         <ul className="pagination">
                             {Array(Math.ceil(vehiclesLP.length / vehiclesPerPage))
                                 .fill()
                                 .map((_, i) => (
                                     <li key={i} className={`page-item ${i + 1 === page ? "active" : null}`} >
-                                        <ButtonGroup aria-label="Toolbar with button groups">
-                                            <ButtonGroup className="me-2" aria-label="First group">
-                                                <Button variant="outline" className="button-page-number" onClick={() => setPage(i + 1)} >
-                                                    {i + 1}
-                                                </Button> 
-                                            </ButtonGroup>{' '}
+                                        <ButtonGroup className="me-2" aria-label="First group" style={{padding:"3px"}}>
+                                            <Button 
+                                            variant="outline" 
+                                            className={`button-page-number ${i + 1 === page ? "active" : null}`}
+                                            onClick={() => setPage(i + 1)} 
+                                            style={{fontSize:"20px", width:"40px", backgroundColor: i + 1 === page ? "orangered" : "" , color: i + 1 === page ? "white" : ""}}>
+                                                {i + 1}
+                                            </Button> 
                                         </ButtonGroup>
                                     </li>
                             ))}
                         </ul>
+                    </Row>
                 </div>
 
                 <br />

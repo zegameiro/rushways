@@ -38,7 +38,7 @@ const NavbarRush = () => {
                   </Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
-                  <Nav className="justify-content-center flex-grow-1 pe-3   dropdown-navbar">
+                  <Nav className="justify-content-center flex-grow-1 text-center dropdown-navbar">
                     <NavDropdown
                       title={NavDropdownTitle}
                       id={`offcanvasNavbarDropdown-expand-${expand}`}

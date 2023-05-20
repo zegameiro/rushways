@@ -20,6 +20,9 @@ const LongTermGoodsConf = () => {
     const selectedVehiclesQuantities = JSON.parse(localStorage.getItem('selectedVehiclesQuantities'));
     console.log("selectedVehiclesQuantities: ", selectedVehiclesQuantities);
 
+    const getIsDriver = (isDriver) => {
+        return isDriver ? "available" : "not available";
+    };
 
     const clearLocalStorage = () => {
         localStorage.removeItem('selectedVehiclesQuantities');
@@ -37,6 +40,7 @@ const LongTermGoodsConf = () => {
                 <div>
                     {Object.keys(selectedVehiclesQuantities).map((vehicleId) => {
                         const vehicle = vehicles_goods[vehicleId - 1];
+                        const showDriverOption = vehicle.isDriver;
                         return (
                             <>
                                 <Row>
@@ -47,9 +51,34 @@ const LongTermGoodsConf = () => {
                                         <h4> <b>{vehicle.vehicleName}</b> </h4>
                                         <h5> <b>Available Seats:</b> {vehicle.availableSeats}</h5>
                                         <h5> <b>Vehicle Type:</b> {vehicle.vehicleType}</h5>
-                                        <h5> <b>Driver:</b> {vehicle.driver}</h5>
+                                        <h5> <b>Driver:</b> {getIsDriver(vehicle.isDriver)}</h5>
                                         <h5> <b>Capacity:</b> {vehicle.capacity}</h5>
                                         <h5> <b>Number of vehicles choosen: {selectedVehiclesQuantities[vehicleId]}</b> </h5>
+                                    </Col>
+                                    <Col sm={6}>
+                                        {showDriverOption && (
+                                            <Form>
+                                                <h4>Include driver</h4>
+                                                {['radio'].map((type) => (
+                                                    <div key={`inline-${type}`} className="mb-3">
+                                                        <Form.Check
+                                                            inline
+                                                            label="Yes"
+                                                            name="group1"
+                                                            type={type}
+                                                            id={`inline-${type}-1`}
+                                                        />
+                                                        <Form.Check
+                                                            inline
+                                                            label="No"
+                                                            name="group1"
+                                                            type={type}
+                                                            id={`inline-${type}-2`}
+                                                        />
+                                                    </div>
+                                                ))}
+                                            </Form>
+                                        )}
                                     </Col>
                                     <br />
                                 </Row>
@@ -123,7 +152,7 @@ const LongTermGoodsConf = () => {
                         <Col sm={4}>
                             <FloatingLabel
                             controlId="floatingInput"
-                            label="Duration in days"
+                            label="Duration (in months)"
                             className="mb-3"
                             >
                                 <Form.Control type="text" placeholder="Duration in days" />

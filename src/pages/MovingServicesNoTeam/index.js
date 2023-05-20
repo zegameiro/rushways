@@ -84,7 +84,7 @@ const MovingServiceNoTeam = () => {
     };
 
     const getVehicleInfor = (vehicle) => {
-        const { id, availableSeats, vehicleName, vehicleType, priceOneDay, vehicleImage } = vehicle;
+        const { id, availableSeats, vehicleName, vehicleType, priceOneDay, capacity,vehicleImage } = vehicle;
         
         return (
             <Row>
@@ -98,6 +98,7 @@ const MovingServiceNoTeam = () => {
                             <h5> <b>Price:</b> {getPrice(priceOneDay)}</h5>
                             <h5> <b>Available Seats:</b> {availableSeats}</h5>
                             <h5> <b>Vehicle Type:</b> {vehicleType}</h5>
+                            <h5> <b>Capacity:</b> {capacity}</h5>
                             <div>
                                 <Button variant="light" onClick={() => decrementValue(id)}> <FontAwesomeIcon icon={faMinus} /> </Button>
                                 <span style={{padding:"10px"}}> {selectedVehicles[id] || 0} </span>
@@ -112,6 +113,7 @@ const MovingServiceNoTeam = () => {
                             <h5> <b>Price:</b> {getPrice(priceOneDay)}</h5>
                             <h5> <b>Available Seats:</b> {availableSeats}</h5>
                             <h5> <b>Vehicle Type:</b> {vehicleType}</h5>
+                            <h5> <b>Capacity:</b> {capacity}</h5>
                             <Button variant="light" onClick={() => decrementValue(id)}> <FontAwesomeIcon icon={faMinus} /> </Button>
                             <span style={{padding:"10px"}}> {selectedVehicles[id] || 0} </span>
                             <Button variant="light" onClick={() => incrementValue(id)}> <FontAwesomeIcon icon={faPlus} /> </Button>
@@ -128,20 +130,18 @@ const MovingServiceNoTeam = () => {
     return (
         <>
             <NavbarRush />
-            <div className="movingservicenoteam">
+            <div className="ocasionalservices">
                 <Row>
                     <Col sm={2}>
                         <a href="/movingservice">
                             <ServicesBackButton />
                         </a>
                     </Col>
-                    <Col sm={7} style={{paddingBottom:"20px"}} className="text-center">
-                        <h4>Moving Services</h4>
-                    </Col>
+                    <h4>Moving Services</h4>
                 </Row>
                 <br />
                 <Row>
-                    <Col sm={5} style={{paddingLeft:"100px"}}>
+                    <Col sm={5}>
                         <h2>Rent a van</h2>
                     </Col>
                 </Row>
@@ -170,9 +170,9 @@ const MovingServiceNoTeam = () => {
                 </div>
 
                 <br />
-                <div style={{paddingLeft:"100px"}}>
-                    <h3>Vehicles available</h3>
-                </div>
+                <h3>Vehicles available</h3>
+                <br />
+
                 <div>´
                     {currentVehicles.map((vehicle) => (
                         <div key={vehicle.id}>
@@ -180,21 +180,25 @@ const MovingServiceNoTeam = () => {
                             <hr />
                         </div>
                     ))}
-                        <ul className="pagination" style={{paddingLeft:"30px"}}>
+                    <Row className="text-center" style={{display:"grid", justifyContent:"center"}}>
+                        <ul className="pagination">
                             {Array(Math.ceil(vehiclesM.length / vehiclesPerPage))
                                 .fill()
                                 .map((_, i) => (
                                     <li key={i} className={`page-item ${i + 1 === page ? "active" : null}`} >
-                                        <ButtonGroup aria-label="Toolbar with button groups">
-                                            <ButtonGroup className="me-2" aria-label="First group">
-                                                <Button variant="outline" className="button-page-number" onClick={() => setPage(i + 1)} >
-                                                    {i + 1}
-                                                </Button> 
-                                            </ButtonGroup>{' '}
+                                        <ButtonGroup className="me-2" aria-label="First group" style={{padding:"3px"}}>
+                                            <Button 
+                                            variant="outline" 
+                                            className={`button-page-number ${i + 1 === page ? "active" : null}`}
+                                            onClick={() => setPage(i + 1)} 
+                                            style={{fontSize:"20px", width:"40px", backgroundColor: i + 1 === page ? "orangered" : "" , color: i + 1 === page ? "white" : ""}}>
+                                                {i + 1}
+                                            </Button> 
                                         </ButtonGroup>
                                     </li>
                             ))}
                         </ul>
+                    </Row>
                 </div>
 
                 <br />

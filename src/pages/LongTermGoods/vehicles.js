@@ -4,7 +4,7 @@ const vehicles_goods = [
         availableSeats: 2,
         vehicleName: "Ford Transit Courier",
         vehicleType: "Diesel",
-        driver: "Optional",
+        isDriver: true,
         capacity: "580 kg",
         vehicleImage: require("../../images/LongTermGoods/ford_transit_courier.jpg")
     },
@@ -13,7 +13,7 @@ const vehicles_goods = [
         availableSeats: 3,
         vehicleName: "Ford E Transit",
         vehicleType: "Electric",
-        driver: "Optional",
+        isDriver: true,
         capacity: "1758 kg",
         vehicleImage: require("../../images/LongTermGoods/ford_etransit.jpg")
     },
@@ -22,7 +22,7 @@ const vehicles_goods = [
         availableSeats: 3,
         vehicleName: "Renault Trafic",
         vehicleType: "Diesel",
-        driver: "Optional",
+        isDriver: true,
         capacity: "1233 kg",
         vehicleImage: require("../../images/LongTermGoods/renault_trafic.jpg")
     },
@@ -31,7 +31,7 @@ const vehicles_goods = [
         availableSeats: 2,
         vehicleName: "Ford NOVO Ranger Cabina Sencilla",
         vehicleType: "Diesel",
-        driver: "Optional",
+        isDriver: true,
         capacity: "1233 kg",
         vehicleImage: require("../../images/LongTermGoods/ford_ranger.jpg")
     },

@@ -190,8 +190,12 @@ const OcasionalServices = () => {
                                 .fill()
                                 .map((_, i) => (
                                     <li key={i} className={`page-item ${i + 1 === page ? "active" : null}`} >
-                                        <ButtonGroup aria-label="Basic example" style={{padding:"3px"}}>
-                                            <Button variant="outline" className="button-page-number" onClick={() => setPage(i + 1)} style={{fontSize:"20px", width:"40px"}}>
+                                        <ButtonGroup className="me-2" aria-label="First group" style={{padding:"3px"}}>
+                                            <Button 
+                                            variant="outline" 
+                                            className={`button-page-number ${i + 1 === page ? "active" : null}`}
+                                            onClick={() => setPage(i + 1)} 
+                                            style={{fontSize:"20px", width:"40px", backgroundColor: i + 1 === page ? "orangered" : "" , color: i + 1 === page ? "white" : ""}}>
                                                 {i + 1}
                                             </Button> 
                                         </ButtonGroup>

@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Row, Col } from "react-bootstrap";
 import NavbarRush from '../../Components/Navbar';
 import Footer from '../../Components/Footer';
 import '../Homepage/index.css'
@@ -39,21 +39,25 @@ const Homepage = () => {
                     <img src={vanImage} alt="van" className="image1"></img>
                 </div>
                 <div className="container homepage-container-1">
-                    <div className="text">
-                        <h1 className="phrase4">Vehicles in<br></br><span className="RushWays">RushWays</span></h1>
-                        <h4 className="phrase5">Find more information about the vehicles that <br></br> are available to you and explore various type<br></br> of services</h4>
-                    </div>
-                    <div>
-                        <img src={carImage} alt="fleet" className="image2"></img>
-                    </div>
+                    <Row>
+                        <Col>
+                            <div className="text">
+                                <h1 className="phrase4">Vehicles in<br></br><span className="RushWays">RushWays</span></h1>
+                                <h4 className="phrase5">Find more information about the vehicles that <br></br> are available to you and explore various type<br></br> of services</h4>
+                            </div>
+                        </Col>
+                        <Col>
+                            <div>
+                                <img src={carImage} alt="fleet" className="image2"></img>
+                            </div>
+                        </Col>
+                    </Row>
                     
                 </div>
                 <div className="fourth_element">
                     <img src={brandImage} alt="brand" className="image3"></img>
                 </div>
             </div>
-            <br />
-            <br />
             <br />
             <Footer />
         </>

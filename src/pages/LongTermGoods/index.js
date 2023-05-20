@@ -25,8 +25,8 @@ const LongTermGoods = () => {
         return capacity === 0.0 ? "to be discussed" : `${capacity}`;
     };
     
-    const getDriver = (driver) => {
-        return driver === 0.0 ? "to be discussed" : `${driver}`;
+    const getIsDriver = (isDriver) => {
+        return isDriver ? "available" : "not available";
     };
 
     const decrementValue = (vehicleId) => {
@@ -88,7 +88,7 @@ const LongTermGoods = () => {
     };
 
     const getVehicleInfor = (vehicle) => {
-        const { id, availableSeats, vehicleName, vehicleType, capacity, driver, vehicleImage } = vehicle;
+        const { id, availableSeats, vehicleName, vehicleType, capacity, isDriver, vehicleImage } = vehicle;
         
         return (
             <Row>
@@ -101,7 +101,7 @@ const LongTermGoods = () => {
                             <h4> <b>{vehicleName}</b> </h4>
                             <h5> <b>Available Seats:</b> {availableSeats}</h5>
                             <h5> <b>Vehicle Type:</b> {vehicleType}</h5>
-                            <h5> <b>Driver:</b> {getDriver(driver)}</h5>
+                            <h5> <b>Driver:</b> {getIsDriver(isDriver)}</h5>
                             <h5> <b>Capacity:</b> {getCapacity(capacity)}</h5>
                             <div>
                                 <Button variant="light" onClick={() => decrementValue(id)}> <FontAwesomeIcon icon={faMinus} /> </Button>
@@ -116,7 +116,7 @@ const LongTermGoods = () => {
                             <h4> <b>{vehicleName}</b> </h4>
                             <h5> <b>Available Seats:</b> {availableSeats}</h5>
                             <h5> <b>Vehicle Type:</b> {vehicleType}</h5>
-                            <h5> <b>Driver:</b> {getDriver(driver)}</h5>
+                            <h5> <b>Driver:</b> {getIsDriver(isDriver)}</h5>
                             <h5> <b>Capacity:</b> {getCapacity(capacity)}</h5>
                             <Button variant="light" onClick={() => decrementValue(id)}> <FontAwesomeIcon icon={faMinus} /> </Button>
                             <span style={{padding:"10px"}}> {selectedVehicles[id] || 0} </span>
@@ -134,21 +134,19 @@ const LongTermGoods = () => {
     return (
         <>
             <NavbarRush />
-            <div className="movingservicenoteam">
+            <div className="ocasionalservices">
                 <Row>
                     <Col sm={2}>
                         <a href="/longtermcontracts">
                             <ServicesBackButton />
                         </a>
                     </Col>
-                    <Col sm={7} style={{paddingBottom:"20px"}} className="text-center">
-                        <h4></h4>
-                    </Col>
+                    <h4 className="text-center">Long Term Contracts</h4>
                 </Row>
                 <br />
-                <Row style={{justifyContent:'center'}}>
-                    <Col md={6} >
-                        <h2>Long Term Contracts - Transportation of Goods</h2>
+                <Row>
+                    <Col sm={5} >
+                        <h2>Transportation of Goods</h2>
                     </Col>
                 </Row>
                 <br />
@@ -176,8 +174,8 @@ const LongTermGoods = () => {
                 </div>
 
                 <br />
-                <div style={{paddingLeft:"100px"}}>
-                    <h3 className="mt-3 mb-0">Vehicles available</h3>
+                <div className="text-center">
+                    <h3>Vehicles available</h3>
                 </div>
                 <div>
                     {currentVehicles.map((vehicle) => (
@@ -186,21 +184,25 @@ const LongTermGoods = () => {
                             <hr />
                         </div>
                     ))}
-                        <ul className="pagination" style={{paddingLeft:"30px"}}>
+                    <Row className="text-center" style={{display:"grid", justifyContent:"center"}}>
+                        <ul className="pagination">
                             {Array(Math.ceil(vehicles_goods.length / vehiclesPerPage))
                                 .fill()
                                 .map((_, i) => (
                                     <li key={i} className={`page-item ${i + 1 === page ? "active" : null}`} >
-                                        <ButtonGroup aria-label="Toolbar with button groups">
-                                            <ButtonGroup className="me-2" aria-label="First group">
-                                                <Button variant="outline" className="button-page-number" onClick={() => setPage(i + 1)} >
-                                                    {i + 1}
-                                                </Button> 
-                                            </ButtonGroup>{' '}
+                                        <ButtonGroup className="me-2" aria-label="First group" style={{padding:"3px"}}>
+                                            <Button 
+                                            variant="outline" 
+                                            className={`button-page-number ${i + 1 === page ? "active" : null}`}
+                                            onClick={() => setPage(i + 1)} 
+                                            style={{fontSize:"20px", width:"40px", backgroundColor: i + 1 === page ? "orangered" : "" , color: i + 1 === page ? "white" : ""}}>
+                                                {i + 1}
+                                            </Button> 
                                         </ButtonGroup>
                                     </li>
                             ))}
                         </ul>
+                    </Row>
                 </div>
 
                 <br />
