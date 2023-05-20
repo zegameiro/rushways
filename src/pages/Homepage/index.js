@@ -1,10 +1,17 @@
 import React from "react";
-import { Row, Col } from "react-bootstrap";
+import { useState } from "react";
+import { Row, Col, Carousel } from "react-bootstrap";
 import NavbarRush from '../../Components/Navbar';
 import Footer from '../../Components/Footer';
-import '../Homepage/index.css'
+
 
 const Homepage = () => {
+
+    const [index, setIndex] = useState(0);
+
+    const handleSelect = (selectedIndex, e) => {
+      setIndex(selectedIndex);
+    };
 
     const vanImage = require('../../images/Homepage/van.png')
     const carImage = require('../../images/Homepage/car_fleet.png')
@@ -13,52 +20,73 @@ const Homepage = () => {
     return (
         <>
             <NavbarRush />
-            <div style={{height:2700}}>
-                <div className="first_element">
-                    <h1>Get Moving with us</h1>
-                    <h4 className="one">Join the RushWays community and stop<p></p>
-                        worring about your transportation needs
-                    </h4>
-                    <a href="/services">
-                        <button className="ChooseService" ><h5>Choose Service</h5></button>
-                    </a>
-                    <h4 className="two">Choose what type of service fits you better</h4>
-                </div>
-                <div className="second_element">
-                    <h1 className="phrase1">Why our costumers <p>choose <span className="RushWays">RushWays</span></p></h1>
-                    <h2 className="phrase2">
-                        <pre>“Since the beginning of our contract<br></br>
-                        with RushWays, they have always<br></br>
-                        been very helpful and we are<br></br>
-                        looking forward to keep their<br></br>
-                        service for a long time”</pre>
-                    </h2>
-                    <h3 className="phrase3">Escola profissional de Aveiro is with us since 2020</h3>
-                </div>
-                <div className="third_element">
-                    <img src={vanImage} alt="van" className="image1"></img>
-                </div>
-                <div className="container homepage-container-1">
-                    <Row>
-                        <Col>
-                            <div className="text">
-                                <h1 className="phrase4">Vehicles in<br></br><span className="RushWays">RushWays</span></h1>
-                                <h4 className="phrase5">Find more information about the vehicles that <br></br> are available to you and explore various type<br></br> of services</h4>
-                            </div>
-                        </Col>
-                        <Col>
-                            <div>
-                                <img src={carImage} alt="fleet" className="image2"></img>
-                            </div>
-                        </Col>
-                    </Row>
-                    
-                </div>
-                <div className="fourth_element">
-                    <img src={brandImage} alt="brand" className="image3"></img>
-                </div>
-            </div>
-            <br />
+            <Carousel activeIndex={index} onSelect={handleSelect}>
+                <Carousel.Item>
+                    <div style={{ position: "relative" }}>
+                        <img
+                        className="d-block w-100"
+                        src="https://rare-gallery.com/uploads/posts/353750-4k-wallpaper.jpg"
+                        alt="First slide"
+                        style={{ width: "600px", height: "600px" }}
+                        />
+                        <div
+                        style={{
+                            position: "absolute",
+                            top: 0,
+                            left: 0,
+                            width: "100%",
+                            height: "100%",
+                            backgroundColor: "rgba(0, 0, 0, 0.3)", 
+                        }}
+                        ></div>
+                        <Carousel.Caption style={{ position: "absolute" }} className="text-center">
+                            <h3>First slide label</h3>
+                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        </Carousel.Caption>
+                    </div>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <div style={{ position: "relative" }}>
+                        <img
+                        className="d-block w-100"
+                        src="https://cache.doutorfinancas.pt/wp-content/uploads/2020/12/09090702/Design-sem-nome-13.jpg"
+                        alt="Second slide"
+                        style={{ width: "600px", height: "600px" }}
+                        />
+                        <div
+                        style={{
+                            position: "absolute",
+                            top: 0,
+                            left: 0,
+                            width: "100%",
+                            height: "100%",
+                            backgroundColor: "rgba(0, 0, 0, 0.3)", 
+                        }}
+                        ></div>
+                        <Carousel.Caption style={{ position: "absolute" }} className="text-center">
+                            <h3>Second slide label</h3>
+                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        </Carousel.Caption>
+                    </div>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img
+                    className="d-block w-100"
+                    src="https://www.infraestruturasdeportugal.pt/sites/default/files/styles/img_1500x550/public/2021-06/Tunel-do-Marao.jpg?itok=dTO78Zjo"
+                    alt="Third slide"
+                    width="600px"
+                    height="600px"
+                    />
+
+                    <Carousel.Caption>
+                    <h3>Third slide label</h3>
+                    <p>
+                        Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                    </p>
+                    </Carousel.Caption>
+                </Carousel.Item>
+            </Carousel>
+
             <Footer />
         </>
     );
