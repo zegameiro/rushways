@@ -16,7 +16,7 @@ const vehicles = [
         vehicleName: "Ford e-transit van",
         vehicleType: "Eletric",
         priceOneDay: 50.40,
-        isDriver: false,
+        isDriver: true,
         image: require("../../images/OcasionalServices/ford_e_transit.jpg")
     },
     {
@@ -36,7 +36,7 @@ const vehicles = [
         vehicleName: "Ford NOVO Ranger",
         vehicleType: "Diesel",
         priceOneDay: 56.99,
-        isDriver: false,
+        isDriver: true,
         image: require("../../images/OcasionalServices/ford_novo_ranger.jpg")
     },
 ]
